@@ -1,0 +1,80 @@
+nodejs 
+vsc 
+javascript + ES6 features 
+
+jQuery - javascript library - not SPA (single page application)
+
+reactjs - javascript library - only one html page (index.html)
+js page  - class or functions => components 
+
+react native 
+
+
+features of reactjs  - component, jsx, virtual DOM   -
+1. SPA 
+2. components -  basic building block of code to perform a specific task 
+
+
+function fun(){
+    return "hello"
+}
+fun()
+
+//reactjs component
+function Fun(){
+    return <div>hello</div> //JSX - javascript extensible (JS+HTML or JS+XML)
+}
+<Fun></Fun>
+<table></table>
+react says that -
+1.all tags will be small letters 
+2. component will be in pascal case 
+3. all tags are paired tag 
+<br></br> or <br/>
+
+3. virtual DOM - DOM tree -> browser creates DOM tree when we load our webpage in the browser 
+react create a copy on real DOM  - virtual DOM 
+will make changes first in the virtual DOM 
+and then patch the changes in the real DOM 
+
+react fiber 
+
+/////////////////////////////////////////
+
+create project using vite tool - 
+vite - next generation frontend tool 
+
+
+.jsx extension  - reactjs components
+
+project structure  -
+main.jsx -> index.css
+
+App.jsx -> App.css
+
+=================================
+React Fragment =  1. <React.Fragment></React.Fragment>
+
+2. import {Fragment} from 'react' 
+  <Fragment></Fragment>
+
+3. <></>
+
+====================
+component create 
+
+{/*  */} => jsx comment 
+
+
+git install 
+github.com -> account create
+
+
+
+
+
+
+
+
+
+
