@@ -1,0 +1,45 @@
+props = 
+
+<div id="" class="" name="" style="">
+    <b>bold</b>
+    <p>erkhekht</p>
+    ektkjekjt
+</div>
+attributes =>
+DOM => DOM property 
+
+
+<MyComp username="LRA" isActive={true} mobile={90909090}></Mycomp>
+property (props) - username 
+
+class => className 
+
+for => htmlFor 
+
+props are read only 
+parent to child
+
+props.children.length 
+
+(props.children) instanceof Array ?  :
+
+?: = ternary 
+&& = short circuit operator 
+
+onClick={eventhandler}
+
+eventhandler - function definition 
+onClick={ ()=>{} }
+
+inline css -  
+
+<h1 style={ {key:value , key:value} }></h1>
+
+<h1 style={ {color:"blue" , fontSize:"30px" , zIndex:2} }></h1>
+
+css variable - 
+let styles = {color:"blue" , fontSize:"30px" , zIndex:2}
+<h1 style={styles}></h1>
+
+=================================
+variable -

@@ -22,9 +22,10 @@ import React from 'react'
 import About from './about'
 
 const Home = () => {
+  let styles = {color:"blue" , fontSize:"30px" , textDecoration:"underline"}
   return (
     <>
-      <h1>Home Page</h1>
+      <h1 style={styles}>Home Page</h1>
       <About></About>
     </>
   )
