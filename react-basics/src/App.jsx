@@ -5,6 +5,9 @@ import About from "./components/about"
 import EventDemo from "./components/EventDemo"
 import Home from "./components/Home"
 import PropsDemo from "./components/PropsDemo"
+import StateDemo from "./components/StateDemo"
+import Counter from "./components/Counter"
+import Addition from "./components/Addition"
 
 function App() {
    return (
@@ -37,8 +40,13 @@ function App() {
         <Home/>
       </PropsDemo> */}
 
-      <EventDemo/>
-      <Home/>
+      {/* <EventDemo/>
+      <Home/> */}
+
+      {/* <StateDemo/> */}
+      {/* <Counter/> */}
+
+      <Addition a={2}/>
     </div>
     </>
   )
