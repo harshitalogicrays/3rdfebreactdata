@@ -1,0 +1,14 @@
+div className 
+css components  -  
+
+bootstrap => react-bootstrap 
+<div className="container"></div>
+
+<Container></Container>
+<Button></Button>
+<Form.Control/>
+<Row></Row>
+<Col></Col>
+
+routing - 
+npm i react-router  => v7 

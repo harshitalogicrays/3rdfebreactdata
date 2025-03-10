@@ -8,6 +8,8 @@ import PropsDemo from "./components/PropsDemo"
 import StateDemo from "./components/StateDemo"
 import Counter from "./components/Counter"
 import Addition from "./components/Addition"
+import Header from "./components/Header"
+import { Outlet } from "react-router"
 
 function App() {
    return (
@@ -18,9 +20,12 @@ function App() {
           rtl={false} pauseOnFocusLoss={false} draggable={false}
                       pauseOnHover={false}
                       theme="colored"/>
+   <Header/>
 
     <div className="container mt-5">
-      <h1 style={{color:"orange" , backgroundColor :"lightblue"}}>Hello React</h1>
+      <Outlet/>
+
+      {/* <h1 style={{color:"orange" , backgroundColor :"lightblue"}}>Hello React</h1> */}
       {/* <h2>Welcome to LRA</h2> */}
       {/* <Home></Home>
       <About/> */}
@@ -46,7 +51,9 @@ function App() {
       {/* <StateDemo/> */}
       {/* <Counter/> */}
 
-      <Addition a={2}/>
+      {/* <Addition a={2}/> */}
+
+   
     </div>
     </>
   )

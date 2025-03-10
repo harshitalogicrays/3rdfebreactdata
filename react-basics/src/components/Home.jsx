@@ -26,7 +26,6 @@ const Home = () => {
   return (
     <>
       <h1 style={styles}>Home Page</h1>
-      <About></About>
     </>
   )
 }
