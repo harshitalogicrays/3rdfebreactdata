@@ -7,9 +7,14 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import { BsArrowDownLeftCircle, BsCart3, BsSearch } from "react-icons/bs";
 import logo from '/src/assets/logo.png'
 import { FaUser } from 'react-icons/fa';
-import { NavLink } from 'react-router';
+import { NavLink, Outlet } from 'react-router';
 
 const Header = () => {
+  const navstyles = ({isActive})=>({
+    backgroundColor: isActive ? "yellow" :"",
+    color: isActive ? "red":"",
+    fontSize:isActive ?"20px":""
+  })
   return (
   <>
    <Navbar expand="lg" bg="dark" data-bs-theme="dark">
@@ -18,11 +23,11 @@ const Header = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link as={NavLink} to="/" >Home</Nav.Link>
-            <Nav.Link  as={NavLink} to="/about">about</Nav.Link>
-            <Nav.Link  as={NavLink} to="/products">Shop</Nav.Link>
+            <Nav.Link as={NavLink} to="/" style={navstyles}>Home</Nav.Link>
+            <Nav.Link  as={NavLink} to="/about" style={navstyles}>about</Nav.Link>
+            <Nav.Link  as={NavLink} to="/products" style={navstyles}>Shop</Nav.Link>
             
-            <Nav.Link  as={NavLink} to="/contact">Contact Us</Nav.Link>
+            <Nav.Link  as={NavLink} to="/contact" style={navstyles}>Contact Us</Nav.Link>
           </Nav>
 
             <Form inline>
@@ -35,7 +40,7 @@ const Header = () => {
             </Form>
 
           <Nav className='ms-auto'>
-          <Nav.Link  as={NavLink} to="/cart">
+          <Nav.Link  as={NavLink} to="/cart" style={navstyles}>
             <div style={{position:'relative',marginRight:'20px'}}>
               <BsCart3 style={{fontSize:'30px'}}/>
               <span class="badge rounded-pill text-bg-danger" 
@@ -43,8 +48,8 @@ const Header = () => {
             </div>
                  
           </Nav.Link>
-            <Nav.Link  as={NavLink} to="/register">Register</Nav.Link>
-            <Nav.Link  as={NavLink} to="/login">Login</Nav.Link>
+            <Nav.Link  as={NavLink} to="/register" style={navstyles}>Register</Nav.Link>
+            <Nav.Link  as={NavLink} to="/login" style={navstyles}>Login</Nav.Link>
 
             <NavDropdown title="Welcome User" id="basic-nav-dropdown">
               <NavDropdown.Item href="#action/3.1"><FaUser/> Profile</NavDropdown.Item>
@@ -62,6 +67,10 @@ const Header = () => {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+ 
+ <Container>
+    <Outlet/>
+ </Container>
  
   </>
   )

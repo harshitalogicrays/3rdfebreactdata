@@ -20,9 +20,6 @@ function App() {
           rtl={false} pauseOnFocusLoss={false} draggable={false}
                       pauseOnHover={false}
                       theme="colored"/>
-   <Header/>
-
-    <div className="container mt-5">
       <Outlet/>
 
       {/* <h1 style={{color:"orange" , backgroundColor :"lightblue"}}>Hello React</h1> */}
@@ -54,7 +51,6 @@ function App() {
       {/* <Addition a={2}/> */}
 
    
-    </div>
     </>
   )
 }

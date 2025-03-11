@@ -1,0 +1,45 @@
+const [user,setUSer] = useState(0)
+const [user,setUSer] = useState("rtet")
+const [user,setUSer] = useState(true)
+const [user,setUSer] = useState([])
+const [user,setUSer] = useState({})
+const [user,setUSer] = useState([{},{},{}])
+const [user,setUSer] = useState() //undefined
+const [user,setUSer] = useState(null) 
+
+
+let user = {username:"",email:"",password:"",cpassword:""}
+
+let [user,setUser] = useState({username:"",email:"",password:"",cpassword:""})
+
+
+setUser([])
+setUser({})
+
+{username:"Siya",email:"",password:"",cpassword:""}
+
+
+
+<h1>arr[0]</h1>
+
+map() => [<h1>drer</h1>,"rterte","Rtetet","tee","Etete","Etete","ette"]
+
+
+["drer","rterte","Rtetet","tee","Etete","Etete","ette"]
+
+Array of objects = 
+[
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""},
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""},
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""},
+{name:"product3" , price:1000 , image:"" , stock:"11" ,  category:""},
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""},
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""},
+{name:"product1" , price:3000 , image:"" , stock:"" ,  category:""}
+]
+
+
+arr[3] =>{name:"product3" , price:1000 , image:"" , stock:"11" ,  category:""},
+arr[3].name 
+
+List Rendering 

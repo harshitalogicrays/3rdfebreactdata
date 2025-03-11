@@ -7,18 +7,25 @@ import Products from './Products'
 import ContactUs from './ContactUs'
 import Register from './Register'
 import Login from './Login'
+import Header from './Header'
+import PageNotFound from './PageNotFound'
 
 const Routing = () => {
   return (
     <Routes>
     <Route path='/' element={<App/>}>
-        <Route index element={<Home/>}></Route>
-        <Route path='about' element={<About/>}></Route>
-        <Route path='products' element={<Products/>} />
-        <Route path='contact' element={<ContactUs/>} />
-        <Route path='register' element={<Register/>} />
+        <Route element={<Header/>}>
+          <Route index element={<Home/>}></Route>
+          <Route path='about' element={<About/>}/>
+          <Route path='products' element={<Products/>} />
+          <Route path='contact' element={<ContactUs/>} />
+          <Route path='register' element={<Register/>} />
+        </Route>
+  
         <Route path='login' element={<Login/>} />
     </Route>
+
+    <Route path="*" element={<PageNotFound/>}/>
 </Routes>
 
   )
