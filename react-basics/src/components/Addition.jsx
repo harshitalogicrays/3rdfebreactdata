@@ -5,8 +5,9 @@ const Addition = (props) => {
     const [num2,setNum2] = useState('')
     const [result, setResult] = useState('')
     const handleCalculate =()=>{
-        setResult(parseInt(num1) + parseInt(num2))
-    }
+        setResult(parseInt(num1) + parseInt(num2)) //17
+        console.log(result) //7
+    } 
   return (
     <div className='container col-6 mt-5 shadow p-4'>
       <div className="mb-3">

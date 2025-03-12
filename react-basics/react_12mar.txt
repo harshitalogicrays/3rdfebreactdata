@@ -43,3 +43,59 @@ arr[3] =>{name:"product3" , price:1000 , image:"" , stock:"11" ,  category:""},
 arr[3].name 
 
 List Rendering 
+
+Fake API - json data 
+
+CRUD - 
+GET  - fetch 
+POST - submit 
+PUT  -  modify 
+DELETE - delete 
+
+JAvascript provides us - fetch API 
+
+fetch API - returns promise =>then catch or async await
+
+fetch("url").then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+            })
+            .catch(err=>console.log(err))
+
+====================================================================
+async function fun(){
+    try{
+        const res = await fetch("url")
+        const data = await res.json()
+        console.log(data)
+    }
+    catch(err){
+        console.log(err)
+    }   
+}
+fun()
+
+//////////////////////////
+axios => npm i axios 
+
+axios.get("")
+.then((res)=>{
+    console.log(res.data)
+})
+.catch(err=>console.log(err))
+
+
+let fun = async()=>{
+    try{
+        const res = await axios.get("url")
+        console.log(res.data)
+    }
+     catch(err){
+        console.log(err)
+    }  
+}
+fun()
+
+///////////////////////////////////////////////////////////////////////////
+
+react hook form  -  html validations 
