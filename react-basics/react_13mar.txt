@@ -1,0 +1,68 @@
+Fake API - json data 
+
+CRUD - 
+GET  - fetch 
+POST - submit 
+PUT  -  modify 
+DELETE - delete 
+
+JAvascript provides us - fetch API 
+
+fetch API - returns promise =>then catch or async await
+
+fetch("url").then((res)=>res.json())
+            .then((data)=>{
+                console.log(data)
+            })
+            .catch(err=>console.log(err))
+
+====================================================================
+async function fun(){
+    try{
+        const res = await fetch("url")
+        const data = await res.json()
+        console.log(data)
+    }
+    catch(err){
+        console.log(err)
+    }   
+}
+fun()
+
+//////////////////////////
+axios => npm i axios 
+
+axios.get("")
+.then((res)=>{
+    console.log(res.data)
+})
+.catch(err=>console.log(err))
+
+
+let fun = async()=>{
+    try{
+        const res = await axios.get("url")
+        console.log(res.data)
+    }
+     catch(err){
+        console.log(err)
+    }  
+}
+fun()
+
+///////////////////////////////////////////////////////////////////////////
+npm i axios 
+
+npm i react-hook-form  -  html validations 
+
+useEffect() hook 
+
+useEffect -  onload , onunload and state update 
+
+
+ {...register('email' , {required : "Email is required" } )}
+
+  {...register('email' , {required : {value:true , message : "Email is required" } } )}
+
+   {...register('email' , {required : "Email is required"  , 
+                           minLength : {value:5 , message:"min 5 char" } } )}
