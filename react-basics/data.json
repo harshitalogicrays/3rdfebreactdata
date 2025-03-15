@@ -1,0 +1,25 @@
+{
+  "users": [
+    {
+      "id": "524e",
+      "username": "Ram",
+      "email": "ram@gmail.com",
+      "password": "ram123",
+      "cpassword": "ram123",
+      "isAdmin": false,
+      "createdAt": "2025-03-15T07:18:03.082Z"
+    },
+    {
+      "id": "2cf2",
+      "username": "Admin",
+      "email": "admin@gmail.com",
+      "password": "admin123",
+      "cpassword": "admin123",
+      "isAdmin": true,
+      "createdAt": "2025-03-15T07:20:51.234Z"
+    }
+  ],
+  "products": [],
+  "orders": [],
+  "categories": []
+}

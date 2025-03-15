@@ -1,0 +1,7 @@
+npm run dev - 5173
+npm start - 3000
+
+"server":"npx json-server data.json --port 1000"
+npm run server  => http://localhost:1000
+
+localStorage and sessionStorage 

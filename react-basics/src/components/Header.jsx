@@ -68,7 +68,7 @@ const Header = () => {
       </Container>
     </Navbar>
  
- <Container>
+ <Container fluid>
     <Outlet/>
  </Container>
  

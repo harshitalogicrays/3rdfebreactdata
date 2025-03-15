@@ -1,14 +1,16 @@
 import React, { useState } from 'react'
 import { Button, Col, Container, Form, Image, InputGroup, Row } from 'react-bootstrap'
 import RegisterImg from '/src/assets/images/a.jpg'
-import { Link } from 'react-router'
+import { Link, useNavigate } from 'react-router'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { toast } from 'react-toastify'
+import axios from 'axios'
 
 const Register = () => {
-  const [user,setUser] = useState({username:"ram",email:'',password:'',cpassword:'',isAdmin:false})
+  const redirect =  useNavigate()
+  const [user,setUser] = useState({username:"",email:'',password:'',cpassword:'',isAdmin:false})
   const [show,setShow] = useState(false)
-  const handleSubmit = (e)=>{
+  const handleSubmit = async(e)=>{
     e.preventDefault()
     let {username,email,password,cpassword} = user
     let pattern = /^[\w\.]+\@[\w]+\.[a-zA-Z]{3}$/ 
@@ -22,7 +24,20 @@ const Register = () => {
       toast.error("password not match")
     }
     else {
-      alert(JSON.stringify(user))
+      // alert(JSON.stringify(user))
+        try{
+          // await fetch("http://localhost:1000/users" , {
+          //   method:"POST" , 
+          //   headers:{'content-type':'application/json'},
+          //   body : JSON.stringify({...user, createdAt:new Date() })
+          // })
+
+          await axios.post("http://localhost:1000/users" , {...user, createdAt:new Date() })
+          
+          toast.success("registered successfully")
+          redirect('/login')
+        }
+        catch(err){toast.error(err)}
     }
    
   }
