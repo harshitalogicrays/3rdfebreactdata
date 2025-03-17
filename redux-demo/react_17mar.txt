@@ -1,0 +1,39 @@
+reduxjs toolkit  -   3rd party javascript state mgmt tools for store top level/ application level state.
+
+npm i @reduxjs/toolkit
+npm i react-redux 
+
+store - the place where we keep our state (global variables)
+reducers - pure function
+action - event
+state - data (global variables)
+view - our app (reactjs)
+
+In one app - only one store  => single source of truth 
+
+bakery shop - 
+customer , shopkeeper , cake shelf 
+cake , pastry, cookies, chocolates, muffins, brownie, bread, sandwiches, accessories etc..  
+
+customer - view 
+cake shelf - store 
+cake , pastry, cookies, chocolates, muffins, brownie etc.. - state 
+BUY_CAKE - action 
+shopkeeper -  reducers
+
+
+customer--> BUY_CAKE-------------------------> shopkeeper-------------------> cake shelf (cake , pastry,  etc)
+view        action      action dispatch         reducer  (pure function)        store         state
+
+cake shelf-----------> customer 
+store       select      view
+
+dealer-------> SELL_CAKE---> shopkeeper----> cake shelf (cake , pastry,  etc)
+view           action         reducer            store        action 
+
+
+
+store --> slice 
+
+useDispatch() hook 
+useSelector() hook
