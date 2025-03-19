@@ -9,6 +9,7 @@ import Register from './Register'
 import Login from './Login'
 import Header from './Header'
 import PageNotFound from './PageNotFound'
+import Cart from './Cart'
 
 const Routing = () => {
   return (
@@ -20,6 +21,8 @@ const Routing = () => {
           <Route path='products' element={<Products/>} />
           <Route path='contact' element={<ContactUs/>} />
           <Route path='register' element={<Register/>} />
+          <Route path='cart' element={<Cart/>} />
+
         </Route>
   
         <Route path='login' element={<Login/>} />
