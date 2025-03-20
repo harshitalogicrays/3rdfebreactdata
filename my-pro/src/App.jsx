@@ -1,14 +1,6 @@
 // import './App.css'
 
 import { ToastContainer } from "react-toastify"
-import About from "./components/about"
-import EventDemo from "./components/EventDemo"
-import Home from "./components/Home"
-import PropsDemo from "./components/PropsDemo"
-import StateDemo from "./components/StateDemo"
-import Counter from "./components/Counter"
-import Addition from "./components/Addition"
-import Header from "./components/Header"
 import { Outlet } from "react-router"
 
 function App() {
