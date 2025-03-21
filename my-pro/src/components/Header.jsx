@@ -37,7 +37,7 @@ const Header = () => {
   const cartItems = useSelector(selectCart)
   return (
   <>
-   <Navbar expand="lg" bg="dark" data-bs-theme="dark">
+   <Navbar expand="lg" bg="dark" data-bs-theme="dark" fixed="top">
       <Container fluid>
         <Navbar.Brand href="#"><Image src={logo}/>  </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -91,9 +91,7 @@ const Header = () => {
       </Container>
     </Navbar>
  
- <Container fluid>
     <Outlet/>
- </Container>
  
   </>
   )

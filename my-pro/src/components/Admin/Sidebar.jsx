@@ -1,10 +1,12 @@
 import React from 'react'
-import { Nav, NavLink, Offcanvas } from 'react-bootstrap'
-import { FaHome, FaList, FaPenFancy, FaThList, FaUser } from 'react-icons/fa'
+import { Nav, Offcanvas } from 'react-bootstrap'
+import { FaHome, FaList, FaPenFancy, FaShoppingBag, FaThList, FaUser } from 'react-icons/fa'
+import { NavLink } from 'react-router'
 const Sidebar = ({show,setShow}) => {
   const links =  [
     {url:'/admin' ,text:'Dashboard' , icon:<FaHome/>},
-    {url:'/admin/view' ,text:'View Products' , icon:<FaList/>},
+    {url:'/admin/categories' ,text:'Manage Categories' , icon:<FaList/>},
+    {url:'/admin/view' ,text:'View Products' , icon:<FaShoppingBag/>},
     {url:'/admin/add' ,text:'Add Product' , icon:<FaPenFancy/>},
     {url:'/admin/users' ,text:'Manage Orders' , icon:<FaThList/>},
     {url:'/admin/orders' ,text:'Manage Users' , icon:<FaUser/>},

@@ -30,5 +30,20 @@
   ],
   "products": [],
   "orders": [],
-  "categories": []
+  "categories": [
+    {
+      "id": "56a5",
+      "name": "Grocery",
+      "desc": "erwewqrqrqrq",
+      "image": "http://res.cloudinary.com/harshita1/image/upload/v1742540255/3rdfebcategory/l5twwcvehka7meoexlvw.png",
+      "createdAt": "2025-03-21T06:57:40.691Z"
+    },
+    {
+      "id": "dd42",
+      "name": "Electronics",
+      "desc": "qqeqeqe",
+      "image": "http://res.cloudinary.com/harshita1/image/upload/v1742540631/3rdfebcategory/swvgy4sun9mt0hvey7is.png",
+      "createdAt": "2025-03-21T07:03:55.710Z"
+    }
+  ]
 }

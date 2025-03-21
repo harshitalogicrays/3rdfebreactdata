@@ -13,6 +13,10 @@ import Cart from './Cart'
 import ProductDetails from './ProductDetails'
 import AdminLayout from './Admin/AdminLayout'
 import Dashboard from './Admin/Dashboard'
+import ViewCategory from './Admin/ViewCategory'
+import AddCategory from './Admin/AddCategory'
+import AddProduct from './Admin/AddProduct'
+import ViewProducts from './Admin/ViewProducts'
 
 const Routing = () => {
   return (
@@ -32,6 +36,13 @@ const Routing = () => {
 
         <Route path='admin' element={<AdminLayout/>}>
           <Route index element={<Dashboard/>}/>
+          <Route path='categories' element={<ViewCategory/>}/>
+          <Route path='categories/add' element={<AddCategory/>}/>
+          <Route path='category/edit/:id' element={<AddCategory/>}/>
+         
+          <Route path='add' element={<AddProduct/>}/>
+          <Route path='view' element={<ViewProducts/>}/>
+
         </Route>
     </Route>
 

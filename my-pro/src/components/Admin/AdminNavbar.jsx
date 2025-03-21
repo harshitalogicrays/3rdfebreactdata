@@ -13,7 +13,7 @@ const AdminNavbar = ({setShow}) => {
       redirect('/') } }
 
   return (
-    <Navbar bg="dark" variant="dark" className="px-3 d-flex justify-content-between">
+    <Navbar bg="light" variant="light" className="px-3 d-flex justify-content-between">
     <div className="d-flex align-items-center">
       <button className="btn btn-outline-light d-md-none" onClick={()=>setShow(true)}>
         <FaBars />
@@ -21,8 +21,8 @@ const AdminNavbar = ({setShow}) => {
       <Navbar.Brand className="ms-2">Admin Panel</Navbar.Brand>
     </div>
     <div className="d-flex align-items-center">
-      <span className="text-white me-3">Welcome, Admin</span>
-      <Button variant="outline-light" onClick={handleLogout} >Logout</Button>
+      <span className="text-black me-3">Welcome, Admin</span>
+      <Button variant="outline-dark" onClick={handleLogout} >Logout</Button>
   </div>
   </Navbar>
   )

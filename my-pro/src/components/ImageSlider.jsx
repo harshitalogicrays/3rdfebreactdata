@@ -20,21 +20,27 @@ const ImageSlider = () => {
 
     const CustomNextArrow = ({ onClick }) => (
       <button className="slick-arrow slick-next" onClick={onClick}
-        style={{position: "absolute", top: "50%", right: "10px", zIndex: 10,
+        style={{position: "absolute", top: "50%", right: "20px", zIndex: 10,
           border: "none", borderRadius: "50%",  padding: "10px" }} ></button> );
     
     const settings = {
-      dots: false, infinite: true,  speed: 500, slidesToShow: 1, slidesToScroll: 1,
+      dots: true, infinite: true,  speed: 500, slidesToShow: 1, slidesToScroll: 1,
       autoplay:true, autoplaySpeed:5000,    pauseOnHover:false,
       prevArrow:<CustomPrevArrow/> , nextArrow:<CustomNextArrow/>   };
   return (
-   <>  <Slider {...settings}>
-          {images.map((img1,index)=>
-          <div key={index} style={{position:'relative'}}>
-            <img src={img1.url} alt={img1.text} className="d-block w-100"
-              style={{ height: "300px", objectFit: "cover" }}/>    </div>)}
+   <>  
+        <Slider {...settings}>
+          {images.map((img, index) => (
+            <div key={index} style={{ position: 'relative' }}>
+              <img 
+                src={img.url} 
+                alt={img.text} 
+                className="w-100" 
+                style={{ height: "500px"}} 
+              /> 
+            </div>
+          ))}
         </Slider>
-
    </>
   )
 }
