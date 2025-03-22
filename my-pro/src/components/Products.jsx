@@ -1,52 +1,21 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Col, Row } from 'react-bootstrap'
+import { Card, Col, Container, Row } from 'react-bootstrap'
 import ProductCard from './ProductCard'
 import axios from 'axios'
 import ReactPaginate from 'react-paginate'
+import { useDispatch, useSelector } from 'react-redux'
+import { getData } from './api'
+import { selectProducts, store_products } from '../redux/productSlice'
+import { toast } from 'react-toastify'
 
 const Products = () => {
-  //API calling 
-  let [products,setProducts] = useState([])
-  // let getData = ()=>{
-  //     fetch("https://dummyjson.com/products")
-  //     .then((res)=>{
-  //       // console.log(res)
-  //       return res.json()
-  //     })
-  //     .then((data)=>{
-  //       console.log(data)
-  //       setProducts(data.products)
-  //     })
-  //     .catch((err)=>{console.log(err)})
-  // }
+  const dispatch = useDispatch()
+  useEffect(()=>{
+      getData(`${import.meta.env.VITE_BASE_URL}/products`).then((res)=>{  
+        dispatch(store_products(res))    })
+      .catch((err)=>{ toast.error(err.message)})},[])
 
-  // let getData = async()=>{
-  //   try{
-  //     const res = await fetch("https://dummyjson.com/products")
-  //     const data =  await res.json()
-  //     setProducts(data.products)
-  //   }
-  //   catch(err){console.log(err)}
-  // }
-
-  // let getData = ()=>{
-  //   axios.get("https://dummyjson.com/products").then((res)=>{
-  //     // console.log(res.data.products)
-  //     setProducts(res.data.products)
-  //   }).catch(err=>console.log(err))
-  // }
-
-
-    let getData = async()=>{
-    try{
-      const res = await axios.get("https://dummyjson.com/products")
-      setProducts(res.data.products)
-    }
-    catch(err){console.log(err)}
-  }
-  useEffect( ()=>{ getData() } , [] ) // []=> dependency array (comp load )
-
-
+  const products = useSelector(selectProducts)
   //pagination 
   const itemsPerPage =  4 //0 to 29 
   const [itemOffset,setItemOffset] =  useState(0)
@@ -96,11 +65,13 @@ console.log(categories)
     </Col>
     <Col>
       <h1>Products Page</h1><hr/>{/* {JSON.stringify(products)}  */}
+      <Container fluid>
       <Row>
         {products.length==0 && <h1> <div class="spinner-border text-danger" role="status"></div> No Product Found</h1>}
           {currentItems.map((product,index)=>
             <ProductCard product = {product} key={index}/>    )}
       </Row>
+      </Container>
       <ReactPaginate breakLabel="..."  nextLabel="next >" onPageChange={handlePageClick}
           pageRangeDisplayed={5}  pageCount={pageCount} previousLabel="< previous"  renderOnZeroPageCount={null}
           containerClassName="pagination mt-5 d-flex justify-content-center" pageClassName="page-item" pageLinkClassName="page-link"

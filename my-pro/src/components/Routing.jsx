@@ -41,6 +41,8 @@ const Routing = () => {
           <Route path='category/edit/:id' element={<AddCategory/>}/>
          
           <Route path='add' element={<AddProduct/>}/>
+          <Route path='product/edit/:id' element={<AddProduct/>}/>
+
           <Route path='view' element={<ViewProducts/>}/>
 
         </Route>

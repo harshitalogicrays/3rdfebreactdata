@@ -1,7 +1,9 @@
 import axios from 'axios'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
 import { useNavigate, useParams } from 'react-router'
 import { toast } from 'react-toastify'
+import { selectCategories } from '../../redux/categorySlice'
 
 const AddCategory = () => {
   const navigate = useNavigate() 
@@ -10,7 +12,13 @@ const AddCategory = () => {
 
   //edit 
   const {id} = useParams()
-console.log(id)
+  const categories = useSelector(selectCategories)
+  const categoryEdit =  categories.find(item=>item.id == id)
+  useEffect(()=>{
+      if(id){setCategory({...categoryEdit})}
+      else setCategory({name:'',desc:"",image:""})
+  },[id])
+////////////////////////////////////////
 
   const handleImage =  async(e)=>{
     // console.log(e.target.files[0])
@@ -37,12 +45,22 @@ console.log(id)
   }
   const handleSubmit=async(e)=>{
     e.preventDefault()
-    try{
-     await axios.post(`${import.meta.env.VITE_BASE_URL}/categories` , {...category, createdAt:new Date() })
-      toast.success("category added")
-      navigate('/admin/categories')
-    }
-    catch(err){toast.error(err)}
+    if(!id){//add
+      try{
+        await axios.post(`${import.meta.env.VITE_BASE_URL}/categories` , {...category, createdAt:new Date() })
+         toast.success("category added")
+         navigate('/admin/categories')
+       }
+       catch(err){toast.error(err)}
+      }
+    else {//update
+      try{
+        await axios.put(`${import.meta.env.VITE_BASE_URL}/categories/${id}` , {...category, createdAt:categoryEdit.createdAt , editedAt: new Date() })
+         toast.success("category updated")
+         navigate('/admin/categories')
+       }
+       catch(err){toast.error(err)}
+    }  
   }
   return (
     <div className='container col-8 mt-3 p-2 shadow'>
@@ -58,7 +76,8 @@ console.log(id)
       </div>
       <div class="mb-3">
         <label for="" class="form-label">Image</label>
-        <input type="file"    class="form-control" name="pic" accept='image/*' onChange={handleImage}/>
+        <input type="file"    class="form-control mb-3" name="pic" accept='image/*' onChange={handleImage}/>
+        {category.image && <img src={category.image} height={100} width={100}/>}
       </div>
       <div class="mb-3">
         <label for="" class="form-label">desc</label>

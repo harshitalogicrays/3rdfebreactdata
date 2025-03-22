@@ -28,15 +28,79 @@
       "createdAt": "2025-03-18T07:26:20.939Z"
     }
   ],
-  "products": [],
+  "products": [
+    {
+      "id": "bceb",
+      "name": "pppp",
+      "brand": "ppp",
+      "category": "Groceries",
+      "price": "1000",
+      "stock": "10",
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/fybz45wpmbtqpsjbzp7j.png"
+      ],
+      "desc": "rwwrwrwrw",
+      "createdAt": "2025-03-22T06:55:26.998Z"
+    },
+    {
+      "id": "6201",
+      "name": "wrwr",
+      "brand": "wrw",
+      "category": "Groceries",
+      "price": "1213",
+      "stock": "1231",
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/tsc8kyarthfbtidjmnth.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/ufz3ahuhz5hrvmnuw2tl.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/wpxidl2lrluao4xaqqvs.jpg"
+      ],
+      "desc": "rwrw",
+      "createdAt": "2025-03-22T07:02:41.329Z"
+    },
+    {
+      "id": "8204",
+      "name": "qweqwrrwr",
+      "brand": "qewrr",
+      "category": "Electronics",
+      "price": "20000",
+      "stock": "131",
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/axrljo0gaswvpmjvh5na.jpg",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/yrfmmolo6ntc0424pzw3.jpg"
+      ],
+      "desc": "eqeq",
+      "createdAt": "2025-03-22T07:02:58.393Z",
+      "editedAt": "2025-03-22T07:24:43.027Z"
+    },
+    {
+      "id": "46db",
+      "name": "4qeqe",
+      "brand": "1314",
+      "category": "Electronics",
+      "price": "131",
+      "stock": "13",
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+      ],
+      "desc": "wrwr",
+      "createdAt": "2025-03-22T07:03:12.217Z"
+    }
+  ],
   "orders": [],
   "categories": [
     {
       "id": "56a5",
-      "name": "Grocery",
-      "desc": "erwewqrqrqrq",
-      "image": "http://res.cloudinary.com/harshita1/image/upload/v1742540255/3rdfebcategory/l5twwcvehka7meoexlvw.png",
-      "createdAt": "2025-03-21T06:57:40.691Z"
+      "name": "Groceries",
+      "desc": "erwewqrqrqrqetrwekgjtgwjjhwgtwghgw",
+      "image": "http://res.cloudinary.com/harshita1/image/upload/v1742624966/3rdfebcategory/zqnxiqrofdcugkthtbw6.jpg",
+      "createdAt": "2025-03-21T06:57:40.691Z",
+      "editedAt": "2025-03-22T06:29:28.601Z"
     },
     {
       "id": "dd42",
