@@ -2,14 +2,26 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { calculatetotal, decrease, emptycart, increase, removefromcart, selectCart, selectTotal } from '../redux/cartSlice'
 import { BsTrash } from 'react-icons/bs'
+import { useLocation, useNavigate } from 'react-router'
 
 const Cart = () => {
     const cartItems = useSelector(selectCart)
     const total =  useSelector(selectTotal)
     const dispatch = useDispatch()
+    const navigate  = useNavigate()
+    const location =  useLocation()
     useEffect(()=>{
         dispatch(calculatetotal())
     },[cartItems])
+
+    const handleCheckout = ()=>{
+        if(sessionStorage.getItem("3rdfeb") != null){
+            navigate('/checkout')
+        }
+        else {
+            navigate('/login' , {state : {path :location.pathname }})
+        }
+    }
   return (
     <div className='container-fluid mt-5 shadow p-4'>
         <h1>Shopping Cart</h1><hr/>
@@ -30,7 +42,7 @@ const Cart = () => {
                             {cartItems.map((item,index)=>
                             <tr key={index}>
                                 <td>{index+1}</td>
-                                <td><img src={item.images[0]} height='50px' width={50} /> {item.title}</td>
+                                <td><img src={item.images[0]} height='50px' width={50} /> {item.name}</td>
                                 <td>&#8377;{item.price}</td>
                                 <td>
                                     <div className="input-group">
@@ -59,7 +71,8 @@ const Cart = () => {
                 <h5>Total : <span className='float-end'>&#8377; {total>0 && total<200 ? <>{(total+5.00).toFixed(2)}</> :<>{(total+0.00).toFixed(2)}</>}</span></h5><br/>
                 <div className="d-flex justify-content-between">
                 <button type="button" className='btn btn-danger btn-lg' onClick={()=>dispatch(emptycart())}><BsTrash/> Empty Cart</button>
-                <button type="button" className='btn btn-info btn-lg'>Proceed to checkout</button>
+                <button type="button" className='btn btn-info btn-lg'
+                onClick={handleCheckout} disabled={cartItems.length==0}>Proceed to checkout</button>
                 </div>
                 </div>
                

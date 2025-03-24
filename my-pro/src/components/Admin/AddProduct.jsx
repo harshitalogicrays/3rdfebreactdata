@@ -9,7 +9,7 @@ import { selectProducts } from '../../redux/productSlice'
 
 const AddProduct = () => {
   const  navigate   = useNavigate()
-  let initialData = {name:'',brand:'',category:'',price:'',stock:'',images:[],desc:''}
+  let initialData = {name:'',brand:'',category:'',price:'',stock:0,images:[],desc:''}
   const dispatch =  useDispatch()
   const [isLoading,setIsLoading] = useState(false)
   useEffect(()=>{
@@ -59,7 +59,8 @@ Array.from(images).forEach(async(img)=>{
     e.preventDefault()
     if(!id){
       try{
-        await axios.post(`${import.meta.env.VITE_BASE_URL}/products` , {...product, images:[...pics],  createdAt:new Date() })
+        await axios.post(`${import.meta.env.VITE_BASE_URL}/products` , {...product,
+          stock:Number(product.stock), price:Number(product.price),  images:[...pics],  createdAt:new Date() })
          toast.success("product added")
          navigate('/admin/view')
        }
@@ -67,7 +68,8 @@ Array.from(images).forEach(async(img)=>{
     }
     else {
       try{
-        await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${id}` , {...product, images:[...pics],  createdAt:productEdit.createdAt , editedAt:new Date() })
+        await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${id}` , {...product, 
+          stock:Number(product.stock), price:Number(product.price), images:[...pics],  createdAt:productEdit.createdAt , editedAt:new Date() })
          toast.success("product updated")
          navigate('/admin/view')
        }
@@ -111,7 +113,7 @@ Array.from(images).forEach(async(img)=>{
         <div className="row">
           <div className="col mb-3">
             <label htmlFor="price" className="form-label">Price</label>
-            <input type="numbet" className="form-control" name="price" 
+            <input type="number" className="form-control" name="price" 
             value={product.price}
             onChange={(e)=>setProduct({...product,price:e.target.value})}/>
           </div>

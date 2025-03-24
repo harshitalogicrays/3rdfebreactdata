@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Button, Col, Container, Form, Image, InputGroup, Row } from 'react-bootstrap'
 import RegisterImg from '/src/assets/images/a.jpg'
-import { Link, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import { BsEye, BsEyeSlash } from 'react-icons/bs'
 import { toast } from 'react-toastify'
 import { useForm } from 'react-hook-form'
@@ -11,6 +11,9 @@ import axios from 'axios'
 const Login = () => {
   const [show,setShow] = useState(false)
   const redirect = useNavigate()
+  const location  = useLocation()
+  const redirectURL = location?.state ? location.state.path :'/'
+
   const {register , handleSubmit , formState: { errors } ,trigger ,getValues,setFocus} = useForm()
   const loginUser = async(user)=>{ 
     // alert(JSON.stringify(getValues()))
@@ -23,7 +26,7 @@ const Login = () => {
       sessionStorage.setItem("3rdfeb",JSON.stringify({email,username,isAdmin , isLoggedIn:true}))
         if(isAdmin){redirect('/admin')
           }
-        else { redirect('/')}
+        else { redirect(redirectURL)}
         toast.success("loggedIn succcessfully")
      }
      else { toast.error("invalid credentails") }

@@ -1,5 +1,6 @@
 import React from 'react'
 import ImageSlider from './ImageSlider'
+import Categories from './Categories'
 
 const Home = () => {
  
@@ -7,6 +8,8 @@ const Home = () => {
     <>
       <ImageSlider/>
       <h1>Home Page</h1>
+      
+      <Categories/>
    </>
   )
 }

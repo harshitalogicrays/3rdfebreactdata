@@ -9,9 +9,9 @@ const cartSlice = createSlice({
             const itemIndex =  state.cartItems.findIndex(item=>item.id == action.payload.id)
             if(itemIndex== -1 ){
                 state.cartItems.push({...action.payload , qty:1})
-                toast.success(`${action.payload.title} added to cart`)
+                toast.success(`${action.payload.name} added to cart`)
             }
-            else  toast.info(`${action.payload.title} already added to cart`)
+            else  toast.info(`${action.payload.name} already added to cart`)
         },
         increase(state,action){
             const itemIndex =  state.cartItems.findIndex(item=>item.id == action.payload.id)

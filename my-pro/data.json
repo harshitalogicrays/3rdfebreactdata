@@ -35,7 +35,7 @@
       "brand": "ppp",
       "category": "Groceries",
       "price": "1000",
-      "stock": "10",
+      "stock": 10,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
@@ -50,7 +50,7 @@
       "brand": "wrw",
       "category": "Groceries",
       "price": "1213",
-      "stock": "1231",
+      "stock": 1231,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/tsc8kyarthfbtidjmnth.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/ufz3ahuhz5hrvmnuw2tl.png",
@@ -65,7 +65,7 @@
       "brand": "qewrr",
       "category": "Electronics",
       "price": "20000",
-      "stock": "131",
+      "stock": 131,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
@@ -82,7 +82,7 @@
       "brand": "1314",
       "category": "Electronics",
       "price": "131",
-      "stock": "13",
+      "stock": 13,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
@@ -90,6 +90,36 @@
       ],
       "desc": "wrwr",
       "createdAt": "2025-03-22T07:03:12.217Z"
+    },
+    {
+      "id": "bea9",
+      "name": "qew",
+      "brand": "qeq",
+      "category": "Groceries",
+      "price": "111",
+      "stock": 11,
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798516/3rdfebproducts/jdatht6hz7muatchxtqc.png"
+      ],
+      "desc": "wrwrwrwrwr",
+      "createdAt": "2025-03-24T06:41:59.395Z"
+    },
+    {
+      "id": "490c",
+      "name": "wewe",
+      "brand": "wew",
+      "category": "Electronics",
+      "price": "1212",
+      "stock": 11,
+      "images": [
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798702/3rdfebproducts/tajnwapsapxrr7tp2s0r.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798708/3rdfebproducts/a6hbkmhq7lwxceikfzen.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/agnoazxh0cr440nvxbuy.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/iatetknfmze1koy5fmib.png",
+        "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/cemxgy4d1xyywapy0w7o.png"
+      ],
+      "desc": "wwewe",
+      "createdAt": "2025-03-24T06:45:11.616Z"
     }
   ],
   "orders": [],
