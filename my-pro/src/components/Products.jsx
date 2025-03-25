@@ -6,28 +6,38 @@ import ReactPaginate from 'react-paginate'
 import { getData } from './api'
 import { toast } from 'react-toastify'
 import { useLocation } from 'react-router'
-import { useDispatch } from 'react-redux'
-import { store_products } from '../redux/productSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { selectProducts, store_products } from '../redux/productSlice'
 
 const Products = () => {
-  const [products,setProducts] = useState([])
   const location = useLocation()
   const cat = location.state
-const dispatch =  useDispatch()
-  useEffect(()=>{
-    if(!cat){
-      getData(`${import.meta.env.VITE_BASE_URL}/products`).then((res)=>{
-        setProducts(res) ; dispatch(store_products(res)) }) 
-      .catch((err)=>{ toast.error(err.message)})
-    }
-    else {
-      getData(`${import.meta.env.VITE_BASE_URL}/products?category=${cat}`).then((res)=>{
-        setProducts(res) ; dispatch(store_products(res)) })
-      .catch((err)=>{ toast.error(err.message)})
-    }
-},[cat])
+ const dispatch =  useDispatch()
 
-  //pagination 
+const [brands,setBrands] = useState([])  
+const [categories,setCategories] = useState([])  
+
+
+  useEffect(()=>{
+      getData(`${import.meta.env.VITE_BASE_URL}/products`).then((res)=>{
+        if(!cat){ dispatch(store_products(res)) 
+        }
+       else {
+          let filters = res.filter(item=>item.category==cat)
+          dispatch(store_products(filters)) 
+       }
+        setBrands(Array.from(new Set(res.map((item)=>item.brand))))
+        setCategories(Array.from(new Set(res.map((item)=>item.category))))
+
+      }) 
+      .catch((err)=>{ toast.error(err.message)})
+},[])
+const products =  useSelector(selectProducts)
+
+
+
+
+ ////////////////////// //pagination //////////////////////////////////////////
   const itemsPerPage =  4 //0 to 29 
   const [itemOffset,setItemOffset] =  useState(0)
   const [pageCount,setPageCount] = useState(0) //30/4 => 8
@@ -40,17 +50,22 @@ useEffect(()=>{
                 // 20,24 => 20 to 23 
 },[itemOffset , products])
   
+
 const handlePageClick = (event) => { //index 1 , index 5
   const newOffset = (event.selected * itemsPerPage) % products.length; //4%30 = 4 //20%30=20
   setItemOffset(newOffset); //itemOffset =  4 , 20
 };
-  ////////////////////////////////////////////////
-const brands = Array.from(new Set(products.map((item)=>item.brand)))
 
   return (
     <div className='container-fluid'> 
     <Row>
     <Col xs={3} style={{marginTop:'100px'}} >
+    <Card className='mb-3' >
+        <Card.Header>Categories</Card.Header>
+        <Card.Body>
+        {categories.map((cat,index)=><p key={index}>{cat}</p>)}
+        </Card.Body>
+      </Card>
       <Card className='mb-3' >
         <Card.Header>Brand</Card.Header>
         <Card.Body>
@@ -60,8 +75,8 @@ const brands = Array.from(new Set(products.map((item)=>item.brand)))
       <Card className='mb-3'>
         <Card.Header>Price</Card.Header>
         <Card.Body>
-            <p><input type="radio" name="price" value="htol" className='me-3'/>High to Low</p>
-            <p><input type="radio" name="price" value="ltoh" className='me-3'/>Low to High</p>
+            <p><input type="number" name="price" value="10" min="0" max="10000" className='me-3'/> :
+            <input type="number" name="price" value="10" min="0" max="10000" className='me-3'/> </p>
      
             </Card.Body>
       </Card>

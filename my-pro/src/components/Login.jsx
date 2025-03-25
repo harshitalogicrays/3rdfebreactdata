@@ -58,7 +58,7 @@ const Login = () => {
             </Form.Group>
             <div className="d-grid gap-3"> <Button type="submit">SignIn</Button> </div>
           </Form>
-          <p className='mt-3'>Create an Account?? &emsp; <Link to="/regitser">SignUp</Link></p>
+          <p className='mt-3'>Create an Account?? &emsp; <Link to="/register">SignUp</Link></p>
         
 
     </Container>

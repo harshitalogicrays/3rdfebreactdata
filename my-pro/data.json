@@ -26,6 +26,15 @@
       "cpassword": "meera123",
       "isAdmin": false,
       "createdAt": "2025-03-18T07:26:20.939Z"
+    },
+    {
+      "id": "b0f1",
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "password": "12345678",
+      "cpassword": "12345678",
+      "isAdmin": false,
+      "createdAt": "2025-03-25T06:19:51.253Z"
     }
   ],
   "products": [
@@ -122,7 +131,102 @@
       "createdAt": "2025-03-24T06:45:11.616Z"
     }
   ],
-  "orders": [],
+  "orders": [
+    {
+      "id": "1135",
+      "cartItems": [
+        {
+          "id": "bceb",
+          "name": "pppp",
+          "brand": "ppp",
+          "category": "Groceries",
+          "price": "1000",
+          "stock": 10,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/fybz45wpmbtqpsjbzp7j.png"
+          ],
+          "desc": "rwwrwrwrw",
+          "createdAt": "2025-03-22T06:55:26.998Z",
+          "qty": 1
+        },
+        {
+          "id": "6201",
+          "name": "wrwr",
+          "brand": "wrw",
+          "category": "Groceries",
+          "price": "1213",
+          "stock": 1231,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/tsc8kyarthfbtidjmnth.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/ufz3ahuhz5hrvmnuw2tl.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/wpxidl2lrluao4xaqqvs.jpg"
+          ],
+          "desc": "rwrw",
+          "createdAt": "2025-03-22T07:02:41.329Z",
+          "qty": 2
+        }
+      ],
+      "total": 3426,
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/25/2025",
+      "orderTime": "12:12:01 PM",
+      "shippingAddress": {
+        "name": "wewqe",
+        "mobile": "1313",
+        "address1": "13",
+        "address2": "1313",
+        "city": "313",
+        "state": "131",
+        "country": "1313",
+        "pincode": "131"
+      },
+      "createdAt": "2025-03-25T06:42:01.651Z"
+    },
+    {
+      "id": "eef8",
+      "cartItems": [
+        {
+          "id": "bceb",
+          "name": "pppp",
+          "brand": "ppp",
+          "category": "Groceries",
+          "price": "1000",
+          "stock": 10,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/fybz45wpmbtqpsjbzp7j.png"
+          ],
+          "desc": "rwwrwrwrw",
+          "createdAt": "2025-03-22T06:55:26.998Z",
+          "qty": 1
+        }
+      ],
+      "total": 1000,
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/25/2025",
+      "orderTime": "12:18:03 PM",
+      "shippingAddress": {
+        "name": "wewqe",
+        "mobile": "1313",
+        "address1": "13",
+        "address2": "1313",
+        "city": "313",
+        "state": "131",
+        "country": "1313",
+        "pincode": "131"
+      },
+      "createdAt": "2025-03-25T06:48:03.505Z"
+    }
+  ],
   "categories": [
     {
       "id": "56a5",

@@ -1,24 +1,36 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Form, Button, Row, Col, Container, Card } from 'react-bootstrap';
 import CheckoutSummary from './CheckoutSummary';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router';
+import { Navigate, useNavigate } from 'react-router';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectAddress, store_address } from '../redux/checkoutSlice';
+import { selectCart } from '../redux/cartSlice';
 
 const Checkout = () => {
   const navigate =  useNavigate()
-    const [shippingAddress, setShippingAddress] = useState({
-        name: '',  mobile: '',   address1: '',  address2: '',
-        city: '',  state: '',   country: '',  pincode: '' });
+  const obj = {
+    name: '',  mobile: '',   address1: '',  address2: '',city: '',  state: '',   country: '',  pincode: '' }
+  const dispatch =  useDispatch()
+    const [shippingAddress, setShippingAddress] = useState({...obj});
     
       const handleCheckout = (e) => {
         e.preventDefault();
         let {mobile, city, pincode} =  shippingAddress
         if(!mobile || !city || !pincode){toast.error("please provide info")}
         else {
+          dispatch(store_address(shippingAddress))
           navigate('/checkoutpayment')
         }
       };
-    
+      const cartItems =  useSelector(selectCart)
+      const address =  useSelector(selectAddress)
+      useEffect(()=>{
+        if(address){setShippingAddress({...address})}
+        else setShippingAddress({...obj})
+      },[])
+
+      if(cartItems.length !=0){
   return (
     <Container className="mt-4">
     <Row className="mt-5">
@@ -101,6 +113,8 @@ const Checkout = () => {
     </Row>
   </Container>
   )
+}
+else return <Navigate to='/'/>
 }
 
 export default Checkout

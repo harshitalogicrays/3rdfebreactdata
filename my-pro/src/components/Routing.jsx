@@ -19,6 +19,7 @@ import AddProduct from './Admin/AddProduct'
 import ViewProducts from './Admin/ViewProducts'
 import Checkout from './Checkout'
 import CheckoutPayment from './CheckoutPayment'
+import Thankyou from './Thankyou'
 
 const Routing = () => {
   return (
@@ -34,6 +35,7 @@ const Routing = () => {
           <Route path='product/details/:id' element={<ProductDetails/>} />
           <Route path='checkout' element={<Checkout/>} />
           <Route path='checkoutpayment' element={<CheckoutPayment/>} />
+          <Route path='thankyou' element={<Thankyou/>} />
 
         </Route>
   

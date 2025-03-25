@@ -1,0 +1,5 @@
+package.json => npm init --y
+
+nodejs web framework -  expressjs 
+
+npm i express cors dotenv stripe nodemon 
