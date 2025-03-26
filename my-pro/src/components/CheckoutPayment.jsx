@@ -78,7 +78,7 @@ const CheckoutPayment = () => {
                             {(paymentMethod=="online" && clientSecret) && 
                             <div className='card p-2'>
                                 <h3 className='mb-4'>Enter Payment Details</h3>
-                                <StripePayment clientSecret={clientSecret} stripe={stripePromise} ></StripePayment>
+                                <StripePayment clientSecret={clientSecret}></StripePayment>
                             </div>
                             }
                             </div>  

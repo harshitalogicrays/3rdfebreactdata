@@ -77,9 +77,9 @@ const Header = () => {
               <NavDropdown title={`Welcome ${username}`} id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1"><FaUser/> Profile</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.2"> Your Cart  </NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/cart" > Your Cart  </NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.3">Your Orders</NavDropdown.Item>
+                <NavDropdown.Item as={NavLink} to="/myorders" >Your Orders</NavDropdown.Item>
                 <NavDropdown.Divider />
                 <NavDropdown.Item onClick={handleLogout}> 
                 <BsArrowDownLeftCircle/>  Logout   </NavDropdown.Item>

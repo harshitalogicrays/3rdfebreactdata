@@ -20,6 +20,10 @@ import ViewProducts from './Admin/ViewProducts'
 import Checkout from './Checkout'
 import CheckoutPayment from './CheckoutPayment'
 import Thankyou from './Thankyou'
+import MyOrders from './MyOrders'
+import MyOrderDetails from './MyOrderDetails'
+import Orders from './Admin/Orders'
+import OrderDetails from './Admin/OrderDetails'
 
 const Routing = () => {
   return (
@@ -36,6 +40,8 @@ const Routing = () => {
           <Route path='checkout' element={<Checkout/>} />
           <Route path='checkoutpayment' element={<CheckoutPayment/>} />
           <Route path='thankyou' element={<Thankyou/>} />
+          <Route path='myorders' element={<MyOrders/>} />
+          <Route path='myorders/details/:id' element={<MyOrderDetails/>} />
 
         </Route>
   
@@ -51,6 +57,8 @@ const Routing = () => {
           <Route path='product/edit/:id' element={<AddProduct/>}/>
 
           <Route path='view' element={<ViewProducts/>}/>
+          <Route path='orders' element={<Orders/>}/>
+          <Route path='orders/:id' element={<OrderDetails/>}/>
 
         </Route>
     </Route>

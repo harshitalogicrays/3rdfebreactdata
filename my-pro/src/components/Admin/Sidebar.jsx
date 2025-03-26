@@ -8,8 +8,8 @@ const Sidebar = ({show,setShow}) => {
     {url:'/admin/categories' ,text:'Manage Categories' , icon:<FaList/>},
     {url:'/admin/view' ,text:'View Products' , icon:<FaShoppingBag/>},
     {url:'/admin/add' ,text:'Add Product' , icon:<FaPenFancy/>},
-    {url:'/admin/users' ,text:'Manage Orders' , icon:<FaThList/>},
-    {url:'/admin/orders' ,text:'Manage Users' , icon:<FaUser/>},
+    {url:'/admin/orders' ,text:'Manage Orders' , icon:<FaThList/>},
+    {url:'/admin/users' ,text:'Manage Users' , icon:<FaUser/>},
   ]
   return (
     <>  <div className="d-none d-md-flex flex-column text-white p-3" 
