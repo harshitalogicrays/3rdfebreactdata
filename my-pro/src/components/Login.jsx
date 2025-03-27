@@ -54,6 +54,7 @@ const Login = () => {
                 <Button variant='light' className='border' onClick={()=>setShow(!show)}> 
                   {show ? <BsEye/> :  <BsEyeSlash/>}
                   </Button> </InputGroup>
+                  <Link to='/forgot-password'>Forgot password??</Link>
                   {errors.password && <span className="text-danger">{errors.password.message}</span>}
             </Form.Group>
             <div className="d-grid gap-3"> <Button type="submit">SignIn</Button> </div>

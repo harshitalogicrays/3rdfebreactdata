@@ -7,25 +7,28 @@
       "password": "ram123",
       "cpassword": "ram123",
       "isAdmin": false,
-      "createdAt": "2025-03-15T07:18:03.082Z"
+      "createdAt": "2025-03-15T07:18:03.082Z",
+      "resetToken": ""
     },
     {
       "id": "2cf2",
       "username": "Admin",
       "email": "admin@gmail.com",
-      "password": "admin123",
+      "password": "123456",
       "cpassword": "admin123",
       "isAdmin": true,
-      "createdAt": "2025-03-15T07:20:51.234Z"
+      "createdAt": "2025-03-15T07:20:51.234Z",
+      "resetToken": ""
     },
     {
       "id": "8632",
       "username": "meera",
       "email": "meera@gmail.com",
-      "password": "meera123",
-      "cpassword": "meera123",
+      "password": "123456",
+      "cpassword": "123456",
       "isAdmin": false,
-      "createdAt": "2025-03-18T07:26:20.939Z"
+      "createdAt": "2025-03-18T07:26:20.939Z",
+      "resetToken": ""
     },
     {
       "id": "b0f1",

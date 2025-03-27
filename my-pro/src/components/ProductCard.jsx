@@ -20,7 +20,7 @@ const ProductCard = ({product}) => {
         onClick={()=>redirect(`/product/details/${product.id}` , {state:product } )}/>
 
         <Card.Body>
-            <Card.Title>{product.title}</Card.Title>
+            <Card.Title>{product.name}</Card.Title>
             <Card.Text>{product.category}<br/>
            {product.brand}<br/>
            &#8377; {product.price}</Card.Text>

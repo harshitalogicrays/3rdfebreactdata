@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react'
-import { Card, Col, Container, Row } from 'react-bootstrap'
-import ProductCard from './ProductCard'
-import axios from 'axios'
-import ReactPaginate from 'react-paginate'
+import { Button, Card, Col, Container, Row } from 'react-bootstrap'
+
 import { getData } from './api'
 import { toast } from 'react-toastify'
 import { useLocation } from 'react-router'
 import { useDispatch, useSelector } from 'react-redux'
 import { selectProducts, store_products } from '../redux/productSlice'
+import { APPLY_FILTER, selectFilterProducts, selectSearchVal } from '../redux/filterSlice'
+import ProductItems from './ProductItems'
 
 const Products = () => {
   const location = useLocation()
@@ -35,68 +35,101 @@ const [categories,setCategories] = useState([])
 const products =  useSelector(selectProducts)
 
 
+const [selectedCategories,setSelectedCategories] = useState([])
+const [selectedBrands,setSelectedBrands] = useState([])
+const [price,setPrice]=useState([0,10000])
 
+const handleCategory = (category)=>{
+  setSelectedCategories(prev=>prev.includes(category) ? prev.filter(c=>c!=category) : [...prev,category])
+}
+const handleBrand = (brand)=>{
+  setSelectedBrands(prev=>prev.includes(brand) ? prev.filter(c=>c!=brand) : [...prev,brand])
+}
 
- ////////////////////// //pagination //////////////////////////////////////////
-  const itemsPerPage =  4 //0 to 29 
-  const [itemOffset,setItemOffset] =  useState(0)
-  const [pageCount,setPageCount] = useState(0) //30/4 => 8
-  const [currentItems, setCurrentItems] = useState([]) //[0,1,2,3]=> [4,5,6,7]
+const handlePriceChange = (e,type)=>{
+  const value = Number(e.target.value)
+  setPrice(prev=>type=="min" ? [value,prev[1]] :[prev[0],value] )
+}
 
+const searchVal = useSelector(selectSearchVal)
+const filterProducts = useSelector(selectFilterProducts)
+console.log(filterProducts)
 useEffect(()=>{
-  const endOffset =  itemOffset+itemsPerPage // 0+4=> 4 // 4+4 => 8 ,20+4=24
-  setPageCount(Math.ceil(products.length/itemsPerPage)) //30/4 => 8
-  setCurrentItems(products.slice(itemOffset , endOffset)) // 0,4 4- exclude => 0 to 3 , 4,8=> 4 to 7
-                // 20,24 => 20 to 23 
-},[itemOffset , products])
-  
+  dispatch(APPLY_FILTER({
+      products ,
+      category:selectedCategories,
+      brands:selectedBrands,
+      priceRange:price,
+      search:searchVal
+  }))
+},[products, selectedCategories,selectedBrands,price,searchVal])
 
-const handlePageClick = (event) => { //index 1 , index 5
-  const newOffset = (event.selected * itemsPerPage) % products.length; //4%30 = 4 //20%30=20
-  setItemOffset(newOffset); //itemOffset =  4 , 20
-};
+const resetFilter = ()=>{
+  setSelectedCategories([])
+  setSelectedBrands([])
+  setPrice([0,10000])
+  dispatch(APPLY_FILTER({
+    products ,
+    category:[],
+    brands:[],
+    priceRange:[],
+    search:''
+}))
+}
 
   return (
     <div className='container-fluid'> 
     <Row>
     <Col xs={3} style={{marginTop:'100px'}} >
-    <Card className='mb-3' >
+      <Card className='mb-3' >
         <Card.Header>Categories</Card.Header>
         <Card.Body>
-        {categories.map((cat,index)=><p key={index}>{cat}</p>)}
+        {categories.map((category,index)=>  <div key={index} className="mb-2">
+        <input  type="checkbox"  onClick={()=>handleCategory(category)} 
+        checked={selectedCategories.includes(category)}/>
+        <label className="ms-3">{category}</label></div>)}
         </Card.Body>
       </Card>
       <Card className='mb-3' >
         <Card.Header>Brand</Card.Header>
         <Card.Body>
-        {brands.map((brand,index)=><p key={index}>{brand}</p>)}
+        {brands.map((brand,index)=>  <div key={index} className="mb-2">
+        <input  type="checkbox" onClick={()=>handleBrand(brand)} 
+        checked={selectedBrands.includes(brand)} />
+        <label className="ms-3">{brand}</label></div>)}
         </Card.Body>
       </Card>
       <Card className='mb-3'>
         <Card.Header>Price</Card.Header>
         <Card.Body>
-            <p><input type="number" name="price" value="10" min="0" max="10000" className='me-3'/> :
-            <input type="number" name="price" value="10" min="0" max="10000" className='me-3'/> </p>
+            <input type="number" name="price" value={price[0]} min="0" max="10000" className='me-1' style={{height:'50px',textAlign:'center' ,width:'70px'}} onChange={(e)=>handlePriceChange(e,"min")}/> :
+            <input type="number" name="price" value={price[1]} min="0" max="10000" className='ms-1' style={{height:'50px',textAlign:'center',width:'70px'}} onChange={(e)=>handlePriceChange(e,"max")}/> 
      
             </Card.Body>
+      </Card>
+      <Card className='mb-3 p-3'>
+        <div class="d-grid gap-2">
+        <Button type="button" onClick={resetFilter}>Reset All</Button>
+        </div>
+        
+        <Card.Body> 
+        </Card.Body>
       </Card>
     </Col>
     <Col  style={{marginTop:'100px'}}>
     {cat ? <h1>{cat} products : </h1>  : <h1>Products Page</h1> }
-     <hr/>{/* {JSON.stringify(products)}  */}
-      <Container>
-      <Row>
-        {products.length==0 && <h1> <div class="spinner-border text-danger" role="status"></div> No Product Found</h1>}
-          {currentItems.map((product,index)=>
-            <ProductCard product = {product} key={index}/>    )}
-      </Row>
-      </Container>
-      <ReactPaginate breakLabel="..."  nextLabel="next >" onPageChange={handlePageClick}
-          pageRangeDisplayed={5}  pageCount={pageCount} previousLabel="< previous"  renderOnZeroPageCount={null}
-          containerClassName="pagination mt-5 d-flex justify-content-center" pageClassName="page-item" pageLinkClassName="page-link"
-          previousClassName="page-item" nextClassName='page-item' activeClassName='page-item active'
-          previousLinkClassName='page-link' nextLinkClassName='page-link'
-        />
+     <hr/>
+          {searchVal || selectedBrands.length !=0 ||selectedCategories.length !=0 || price[1] != 10000  ?  
+            <>
+              {filterProducts.length==0 ? <h1>No product found</h1>
+              : 
+              <ProductItems products={filterProducts}/>
+            }
+            </>
+          :
+          <ProductItems products={products}/>
+          }
+           
     </Col>
     </Row>
  
