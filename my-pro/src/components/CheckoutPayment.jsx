@@ -9,6 +9,7 @@ import { selectAddress } from '../redux/checkoutSlice'
 import { loadStripe } from '@stripe/stripe-js'
 import { Elements } from '@stripe/react-stripe-js'
 import StripePayment from './StripePayment'
+import emailjs from '@emailjs/browser';
 
 const stripePromise = loadStripe(`${import.meta.env.VITE_PK}`)
 
@@ -24,12 +25,27 @@ const CheckoutPayment = () => {
     const {username , email} = JSON.parse(sessionStorage.getItem("3rdfeb"))
     const handleCODorder = async()=>{
         try{
-            await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
+           const res =  await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
                 paymentMethod:'cod' , orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
             })
-            toast.success("order placed")
-            navigate('/thankyou')     
-            dispatch(emptycart())
+            // console.log(res)
+            if(res.status==200 || res.status==201){
+                 emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
+                    status :res.data.orderStatus ,
+                    email:res.data.email , 
+                    payment :"Cash on Delivery",
+                    order_id : res.data.id , 
+                    orders :res.data.cartItems ,
+                    total:res.data.total } , {
+                    publicKey: 'Ir17coOALHBiw7W2W',
+                  }).then(()=>{
+                    toast.success("order placed")
+                    navigate('/thankyou')     
+                    dispatch(emptycart())            
+                  }).catch((err)=>{toast.error(err.message)})   
+              
+            }
+      
         }
         catch(err){toast.error(err.messge)}
     }

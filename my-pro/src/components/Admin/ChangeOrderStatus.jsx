@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
+import emailjs from '@emailjs/browser'
 
 const ChangeOrderStatus = ({ order }) => {
     const redirect =  useNavigate()
@@ -9,9 +10,22 @@ const ChangeOrderStatus = ({ order }) => {
     const [status, setStatus] = useState(order.orderStatus)
     const handleUpdate = async()=>{
         try{
-            await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}` , {...order ,  orderStatus:status , editedAt:new Date()})
-            toast.success("order updated")
-            redirect('/admin/orders')
+            let res  = await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}` , {...order ,  orderStatus:status , editedAt:new Date()})
+           
+            emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
+                status :res.data.orderStatus ,
+                email:res.data.email , 
+                payment :res.data.paymentMethod,
+                order_id : res.data.id , 
+                orders :res.data.cartItems ,
+                total:res.data.total } , {
+                publicKey: 'Ir17coOALHBiw7W2W',
+              }).then(()=>{
+                toast.success("order updated")
+                redirect('/admin/orders')        
+              }).catch((err)=>{toast.error(err.message)})   
+
+  
         }
         catch(err){
             toast.error(err.message)

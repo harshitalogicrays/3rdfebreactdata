@@ -99,7 +99,7 @@ const Header = () => {
 
               <ShowOnLogin>
                 <NavDropdown title={`Welcome ${username}`} id="basic-nav-dropdown">
-                  <NavDropdown.Item href="#action/3.1"><FaUser /> Profile</NavDropdown.Item>
+                  <NavDropdown.Item as={NavLink} to="/profile"><FaUser /> Profile</NavDropdown.Item>
                   <NavDropdown.Divider />
                   <NavDropdown.Item as={NavLink} to="/cart" > Your Cart  </NavDropdown.Item>
                   <NavDropdown.Divider />

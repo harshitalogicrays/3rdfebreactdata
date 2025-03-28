@@ -1,5 +1,8 @@
 import React, { Fragment, useState } from 'react'
 import { FaArrowCircleLeft, FaArrowCircleRight } from 'react-icons/fa'
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+
 
 const ProductImages = ({images}) => {
     const [pic , setPic] = useState(images[0])
@@ -23,7 +26,17 @@ const ProductImages = ({images}) => {
 
   return (
     <>
-      <img src={pic} className='mb-3' height='300px' width={500} />
+      {/* <img src={pic} className='mb-3' height='300px' width={500} /> */}
+
+      <Zoom>
+        <img
+          src={pic}
+          alt="Product"
+          width="500"
+          height="350"
+          style={{ borderRadius: "10px", cursor: "zoom-in" }}
+        />
+      </Zoom>
     <br/>
     <FaArrowCircleLeft className='me-3' onClick={handlePrev}/>
       {images.map((img,i)=><Fragment key={i}> 

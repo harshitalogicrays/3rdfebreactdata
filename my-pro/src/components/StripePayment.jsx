@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router'
 import { toast } from 'react-toastify'
 import { emptycart, selectCart, selectTotal } from '../redux/cartSlice'
 import { selectAddress } from '../redux/checkoutSlice'
+import emailjs from '@emailjs/browser'
 
 const StripePayment = ({clientSecret }) => {
   const dispatch = useDispatch()
@@ -40,12 +41,26 @@ const StripePayment = ({clientSecret }) => {
 
   const saveorder = async()=>{
     try{
-      await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
+      let res = await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
           paymentMethod:'online' , orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
       })
-      toast.success("order placed")
-      dispatch(emptycart())
-      navigate('/thankyou')     
+      if(res.status==200 || res.status==201){
+        emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
+           status :res.data.orderStatus ,
+           email:res.data.email , 
+           payment :"Online (Paid)",
+           order_id : res.data.id , 
+           orders :res.data.cartItems ,
+           total:res.data.total } , {
+           publicKey: 'Ir17coOALHBiw7W2W',
+         }).then(()=>{
+           toast.success("order placed")
+           navigate('/thankyou')     
+           dispatch(emptycart())            
+         }).catch((err)=>{toast.error(err.message)})   
+     
+   }
+ 
 
   }
   catch(err){toast.error(err.messge)}

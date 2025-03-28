@@ -26,6 +26,8 @@ import Orders from './Admin/Orders'
 import OrderDetails from './Admin/OrderDetails'
 import ForgotPassword from './ForgotPassword'
 import ResetPassword from './ResetPassword'
+import Profile from './Profile'
+import { Protected, ProtectedAdmin } from './hiddenlinks'
 
 const Routing = () => {
   return (
@@ -42,8 +44,9 @@ const Routing = () => {
           <Route path='checkout' element={<Checkout/>} />
           <Route path='checkoutpayment' element={<CheckoutPayment/>} />
           <Route path='thankyou' element={<Thankyou/>} />
-          <Route path='myorders' element={<MyOrders/>} />
-          <Route path='myorders/details/:id' element={<MyOrderDetails/>} />
+          <Route path='myorders' element={<Protected><MyOrders/></Protected>} />
+          <Route path='myorders/details/:id' element={<Protected><MyOrderDetails/></Protected>} />
+          <Route path='profile' element={<Protected><Profile/></Protected>} />
 
         </Route>
   
@@ -51,7 +54,7 @@ const Routing = () => {
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password/:token" element={<ResetPassword />} />
 
-        <Route path='admin' element={<AdminLayout/>}>
+        <Route path='admin' element={<ProtectedAdmin><AdminLayout/></ProtectedAdmin>}>
           <Route index element={<Dashboard/>}/>
           <Route path='categories' element={<ViewCategory/>}/>
           <Route path='categories/add' element={<AddCategory/>}/>

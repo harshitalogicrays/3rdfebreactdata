@@ -14,7 +14,7 @@
       "id": "2cf2",
       "username": "Admin",
       "email": "admin@gmail.com",
-      "password": "123456",
+      "password": "admin123",
       "cpassword": "admin123",
       "isAdmin": true,
       "createdAt": "2025-03-15T07:20:51.234Z",
@@ -325,6 +325,142 @@
         "pincode": "1414"
       },
       "createdAt": "2025-03-26T06:52:22.284Z"
+    },
+    {
+      "id": "6d36",
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 13,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 1
+        }
+      ],
+      "total": 131,
+      "username": "meera",
+      "email": "meera@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/28/2025",
+      "orderTime": "12:30:01 PM",
+      "shippingAddress": {
+        "name": "weq",
+        "mobile": "1313",
+        "address1": "131",
+        "address2": "1311",
+        "city": "31",
+        "state": "1311",
+        "country": "313",
+        "pincode": "13"
+      },
+      "createdAt": "2025-03-28T07:00:01.123Z"
+    },
+    {
+      "id": "4300",
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 13,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 1
+        }
+      ],
+      "total": 131,
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/28/2025",
+      "orderTime": "12:33:16 PM",
+      "shippingAddress": {
+        "name": "weq",
+        "mobile": "1313",
+        "address1": "131",
+        "address2": "1311",
+        "city": "31",
+        "state": "1311",
+        "country": "313",
+        "pincode": "13"
+      },
+      "createdAt": "2025-03-28T07:03:16.159Z"
+    },
+    {
+      "id": "b7de",
+      "cartItems": [
+        {
+          "id": "8204",
+          "name": "qweqwrrwr",
+          "brand": "qewrr",
+          "category": "Electronics",
+          "price": "20000",
+          "stock": 131,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/axrljo0gaswvpmjvh5na.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/yrfmmolo6ntc0424pzw3.jpg"
+          ],
+          "desc": "eqeq",
+          "createdAt": "2025-03-22T07:02:58.393Z",
+          "editedAt": "2025-03-22T07:24:43.027Z",
+          "qty": 2
+        },
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 13,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 1
+        }
+      ],
+      "total": 40131,
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "paymentMethod": "online",
+      "orderStatus": "shipped",
+      "orderDate": "3/28/2025",
+      "orderTime": "12:37:45 PM",
+      "shippingAddress": {
+        "name": "weq",
+        "mobile": "1313",
+        "address1": "131",
+        "address2": "1311",
+        "city": "31",
+        "state": "1311",
+        "country": "313",
+        "pincode": "13"
+      },
+      "createdAt": "2025-03-28T07:07:45.600Z",
+      "editedAt": "2025-03-28T07:10:17.387Z"
     }
   ],
   "categories": [

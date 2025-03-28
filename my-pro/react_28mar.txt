@@ -1,0 +1,22 @@
+image zoom 
+email send 
+products page - category check
+protectedRoutes 
+
+
+npm i react-medium-image-zoom
+
+
+status 
+email 
+payment
+orde_id 
+
+orders 
+ name qty price image
+ total
+
+ profile page 
+ review and rating 
+ track order 
+ coupon code 

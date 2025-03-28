@@ -16,15 +16,16 @@ const Products = () => {
 
 const [brands,setBrands] = useState([])  
 const [categories,setCategories] = useState([])  
-
+const [selectedCategories,setSelectedCategories] = useState([])
+const [selectedBrands,setSelectedBrands] = useState([])
+const [price,setPrice]=useState([0,10000])
 
   useEffect(()=>{
       getData(`${import.meta.env.VITE_BASE_URL}/products`).then((res)=>{
         if(!cat){ dispatch(store_products(res)) 
         }
        else {
-          let filters = res.filter(item=>item.category==cat)
-          dispatch(store_products(filters)) 
+        handleCategory(cat)
        }
         setBrands(Array.from(new Set(res.map((item)=>item.brand))))
         setCategories(Array.from(new Set(res.map((item)=>item.category))))
@@ -35,9 +36,7 @@ const [categories,setCategories] = useState([])
 const products =  useSelector(selectProducts)
 
 
-const [selectedCategories,setSelectedCategories] = useState([])
-const [selectedBrands,setSelectedBrands] = useState([])
-const [price,setPrice]=useState([0,10000])
+
 
 const handleCategory = (category)=>{
   setSelectedCategories(prev=>prev.includes(category) ? prev.filter(c=>c!=category) : [...prev,category])
