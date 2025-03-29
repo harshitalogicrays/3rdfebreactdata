@@ -3,11 +3,10 @@
  email already exists 
  update product stock 
  product card - in stock /outof stock 
-
- 
- review and rating 
+ review and rating -> admin can decide which review to display on frontend side 
 
 
+ dashboard 
  track order 
  coupon code 
- 
+ deploy
