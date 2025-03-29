@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Chart from "react-apexcharts";
 
 const SalesChart = () => {
+  const [salesData, setSalesData] = useState(Array(12).fill(0)); // Initialize with 12 months of 0 sales
+
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        const response = await fetch("http://localhost:3000/orders");
+        const orders = await response.json();
+
+        // Process orders to calculate monthly sales
+        const monthlySales = Array(12).fill(0);
+
+        orders.forEach((order) => {
+          const date = new Date(order.date); // Assuming `order.date` is a valid date string
+          const month = date.getMonth(); // Get month (0-11)
+          monthlySales[month] += order.totalAmount; // Assuming `order.totalAmount` holds the sales value
+        });
+
+        setSalesData(monthlySales);
+      } catch (error) {
+        console.error("Error fetching orders:", error);
+      }
+    };
+
+    fetchOrders();
+  }, []);
+
   const chartOptions = {
     chart: {
       id: "sales-chart",
@@ -19,7 +45,7 @@ const SalesChart = () => {
   const chartSeries = [
     {
       name: "Sales",
-      data: [4500, 5200, 6100, 7000, 8300, 9200, 10800, 11900, 13500, 14200, 15000, 16000],
+      data: salesData,
     },
   ];
 
