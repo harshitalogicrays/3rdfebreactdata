@@ -28,6 +28,7 @@ import ForgotPassword from './ForgotPassword'
 import ResetPassword from './ResetPassword'
 import Profile from './Profile'
 import { Protected, ProtectedAdmin } from './hiddenlinks'
+import ManageReviews from './Admin/ManageReviews'
 
 const Routing = () => {
   return (
@@ -66,6 +67,7 @@ const Routing = () => {
           <Route path='view' element={<ViewProducts/>}/>
           <Route path='orders' element={<Orders/>}/>
           <Route path='orders/:id' element={<OrderDetails/>}/>
+          <Route path='reviews' element={<ManageReviews/>}/>
 
         </Route>
     </Route>

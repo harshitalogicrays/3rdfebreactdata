@@ -1,6 +1,6 @@
 import React from 'react'
 import { Nav, Offcanvas } from 'react-bootstrap'
-import { FaHome, FaList, FaPenFancy, FaShoppingBag, FaThList, FaUser } from 'react-icons/fa'
+import { FaComment, FaHome, FaList, FaPenFancy, FaShoppingBag, FaThList, FaUser } from 'react-icons/fa'
 import { NavLink } from 'react-router'
 const Sidebar = ({show,setShow}) => {
   const links =  [
@@ -10,6 +10,7 @@ const Sidebar = ({show,setShow}) => {
     {url:'/admin/add' ,text:'Add Product' , icon:<FaPenFancy/>},
     {url:'/admin/orders' ,text:'Manage Orders' , icon:<FaThList/>},
     {url:'/admin/users' ,text:'Manage Users' , icon:<FaUser/>},
+    {url:'/admin/reviews' ,text:'Manage Reviews' , icon:<FaComment/>},
   ]
   return (
     <>  <div className="d-none d-md-flex flex-column text-white p-3" 

@@ -15,6 +15,7 @@ const StripePayment = ({clientSecret }) => {
   const elements =  useElements()
 
   const [isLoading,setIsLoading] = useState(false)
+  const [paymentId,setPaymentId]= useState('')
 
   const cartItems =  useSelector(selectCart)
   const total =  useSelector(selectTotal)
@@ -31,6 +32,7 @@ const StripePayment = ({clientSecret }) => {
         console.log(res)
         if(res.paymentIntent){
           if(res.paymentIntent.status=='succeeded'){
+            setPaymentId(res.paymentIntent.id)
             toast.success("payment done")
             saveorder()
           }
@@ -42,9 +44,17 @@ const StripePayment = ({clientSecret }) => {
   const saveorder = async()=>{
     try{
       let res = await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
-          paymentMethod:'online' , orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
+          paymentMethod:'online' , paymentId:paymentId, orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
       })
       if(res.status==200 || res.status==201){
+        await Promise.all(
+          cartItems.map(async (item) => {
+            await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
+              stock: item.stock - item.qty,  
+            });
+          })
+        )
+
         emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
            status :res.data.orderStatus ,
            email:res.data.email , 

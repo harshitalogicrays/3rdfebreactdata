@@ -2,13 +2,18 @@
   "users": [
     {
       "id": "524e",
-      "username": "Ram",
+      "username": "Ram Sharma",
       "email": "ram@gmail.com",
       "password": "ram123",
       "cpassword": "ram123",
       "isAdmin": false,
       "createdAt": "2025-03-15T07:18:03.082Z",
-      "resetToken": ""
+      "resetToken": "",
+      "mobile": "987654321",
+      "address1": "weqw",
+      "city": "qeq",
+      "avatar": "http://res.cloudinary.com/harshita1/image/upload/v1743229963/3rdfebuser/cmii3gzu6wrequjlsaxh.png",
+      "edited": "2025-03-29T06:36:35.901Z"
     },
     {
       "id": "2cf2",
@@ -38,38 +43,33 @@
       "cpassword": "12345678",
       "isAdmin": false,
       "createdAt": "2025-03-25T06:19:51.253Z"
+    },
+    {
+      "id": "aba7",
+      "username": "ramr",
+      "email": "ram1@gmail.com",
+      "password": "ram123",
+      "cpassword": "ram123",
+      "isAdmin": false,
+      "createdAt": "2025-03-29T06:40:52.295Z"
     }
   ],
   "products": [
-    {
-      "id": "bceb",
-      "name": "pppp",
-      "brand": "ppp",
-      "category": "Groceries",
-      "price": "1000",
-      "stock": 10,
-      "images": [
-        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
-        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
-        "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/fybz45wpmbtqpsjbzp7j.png"
-      ],
-      "desc": "rwwrwrwrw",
-      "createdAt": "2025-03-22T06:55:26.998Z"
-    },
     {
       "id": "6201",
       "name": "wrwr",
       "brand": "wrw",
       "category": "Groceries",
       "price": "1213",
-      "stock": 1231,
+      "stock": 0,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/tsc8kyarthfbtidjmnth.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/ufz3ahuhz5hrvmnuw2tl.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/wpxidl2lrluao4xaqqvs.jpg"
       ],
       "desc": "rwrw",
-      "createdAt": "2025-03-22T07:02:41.329Z"
+      "createdAt": "2025-03-22T07:02:41.329Z",
+      "qty": 2
     },
     {
       "id": "8204",
@@ -77,7 +77,7 @@
       "brand": "qewrr",
       "category": "Electronics",
       "price": "20000",
-      "stock": 131,
+      "stock": 5,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
@@ -94,14 +94,15 @@
       "brand": "1314",
       "category": "Electronics",
       "price": "131",
-      "stock": 13,
+      "stock": 7,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
       ],
       "desc": "wrwr",
-      "createdAt": "2025-03-22T07:03:12.217Z"
+      "createdAt": "2025-03-22T07:03:12.217Z",
+      "qty": 2
     },
     {
       "id": "bea9",
@@ -109,12 +110,13 @@
       "brand": "qeq",
       "category": "Groceries",
       "price": "111",
-      "stock": 11,
+      "stock": 10,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742798516/3rdfebproducts/jdatht6hz7muatchxtqc.png"
       ],
       "desc": "wrwrwrwrwr",
-      "createdAt": "2025-03-24T06:41:59.395Z"
+      "createdAt": "2025-03-24T06:41:59.395Z",
+      "qty": 1
     },
     {
       "id": "490c",
@@ -460,7 +462,179 @@
         "pincode": "13"
       },
       "createdAt": "2025-03-28T07:07:45.600Z",
-      "editedAt": "2025-03-28T07:10:17.387Z"
+      "editedAt": "2025-03-28T11:34:03.819Z"
+    },
+    {
+      "id": "5f7f",
+      "cartItems": [
+        {
+          "id": "bceb",
+          "name": "pppp",
+          "brand": "ppp",
+          "category": "Groceries",
+          "price": "1000",
+          "stock": 10,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/boroxmfqvq0nsfwop6rp.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/y3tsfh5kqr620dawdsga.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626517/3rdfebproducts/fybz45wpmbtqpsjbzp7j.png"
+          ],
+          "desc": "rwwrwrwrw",
+          "createdAt": "2025-03-22T06:55:26.998Z",
+          "qty": 2
+        }
+      ],
+      "total": 2000,
+      "username": "Ram Sharma",
+      "email": "ram@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/29/2025",
+      "orderTime": "12:17:20 PM",
+      "shippingAddress": {
+        "name": "qqw",
+        "mobile": "1321313",
+        "address1": "eq",
+        "address2": "qeqe",
+        "city": "133q",
+        "state": "eq",
+        "country": "qeq",
+        "pincode": "131"
+      },
+      "createdAt": "2025-03-29T06:47:20.459Z"
+    },
+    {
+      "id": "962a",
+      "cartItems": [
+        {
+          "id": "6201",
+          "name": "wrwr",
+          "brand": "wrw",
+          "category": "Groceries",
+          "price": "1213",
+          "stock": 12,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/tsc8kyarthfbtidjmnth.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/ufz3ahuhz5hrvmnuw2tl.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626959/3rdfebproducts/wpxidl2lrluao4xaqqvs.jpg"
+          ],
+          "desc": "rwrw",
+          "createdAt": "2025-03-22T07:02:41.329Z",
+          "qty": 2
+        }
+      ],
+      "total": 2426,
+      "username": "Ram Sharma",
+      "email": "ram@gmail.com",
+      "paymentMethod": "online",
+      "paymentId": "",
+      "orderStatus": "placed",
+      "orderDate": "3/29/2025",
+      "orderTime": "12:19:32 PM",
+      "shippingAddress": {
+        "name": "qwq",
+        "mobile": "213113",
+        "address1": "131",
+        "address2": "131",
+        "city": "1313",
+        "state": "131",
+        "country": "313",
+        "pincode": "1313"
+      },
+      "createdAt": "2025-03-29T06:49:32.786Z"
+    },
+    {
+      "id": "1094",
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 10,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 1
+        }
+      ],
+      "total": 131,
+      "username": "Ram Sharma",
+      "email": "ram@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/29/2025",
+      "orderTime": "12:58:12 PM",
+      "shippingAddress": {
+        "name": "eq",
+        "mobile": "131",
+        "address1": "313",
+        "address2": "131",
+        "city": "1313",
+        "state": "131",
+        "country": "1313",
+        "pincode": "13"
+      },
+      "createdAt": "2025-03-29T07:28:12.527Z"
+    },
+    {
+      "id": "3d3b",
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 9,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 2
+        },
+        {
+          "id": "bea9",
+          "name": "qew",
+          "brand": "qeq",
+          "category": "Groceries",
+          "price": "111",
+          "stock": 11,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798516/3rdfebproducts/jdatht6hz7muatchxtqc.png"
+          ],
+          "desc": "wrwrwrwrwr",
+          "createdAt": "2025-03-24T06:41:59.395Z",
+          "qty": 1
+        }
+      ],
+      "total": 373,
+      "username": "harshita",
+      "email": "harshita.logicrays@gmail.com",
+      "paymentMethod": "online",
+      "paymentId": "",
+      "orderStatus": "placed",
+      "orderDate": "3/29/2025",
+      "orderTime": "12:58:45 PM",
+      "shippingAddress": {
+        "name": "eq",
+        "mobile": "131",
+        "address1": "313",
+        "address2": "131",
+        "city": "1313",
+        "state": "131",
+        "country": "1313",
+        "pincode": "13"
+      },
+      "createdAt": "2025-03-29T07:28:45.486Z"
     }
   ],
   "categories": [
@@ -479,5 +653,48 @@
       "image": "http://res.cloudinary.com/harshita1/image/upload/v1742540631/3rdfebcategory/swvgy4sun9mt0hvey7is.png",
       "createdAt": "2025-03-21T07:03:55.710Z"
     }
-  ]
+  ],
+  "reviews": [
+    {
+      "id": "ffd7",
+      "orderId": "1135",
+      "productId": "bceb",
+      "productName": "pppp",
+      "username": "harshita",
+      "rating": 5,
+      "comment": "best product ",
+      "date": "2025-03-29T07:20:03.558Z"
+    },
+    {
+      "id": "9f40",
+      "orderId": "5f7f",
+      "productId": "bceb",
+      "productName": "pppp",
+      "username": "Ram Sharma",
+      "rating": 1,
+      "comment": "bad product",
+      "date": "2025-03-29T07:26:35.209Z"
+    },
+    {
+      "id": "c019",
+      "orderId": "3d3b",
+      "productId": "46db",
+      "productName": "4qeqe",
+      "username": "harshita",
+      "rating": 3.5,
+      "comment": "rwqerq",
+      "date": "2025-03-29T07:29:32.231Z"
+    },
+    {
+      "id": "3eed",
+      "orderId": "1094",
+      "productId": "46db",
+      "productName": "4qeqe",
+      "username": "Ram Sharma",
+      "rating": 2,
+      "comment": "wqeq",
+      "date": "2025-03-29T07:29:47.879Z"
+    }
+  ],
+  "coupons": []
 }

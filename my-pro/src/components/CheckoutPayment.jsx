@@ -30,6 +30,14 @@ const CheckoutPayment = () => {
             })
             // console.log(res)
             if(res.status==200 || res.status==201){
+                await Promise.all(
+                    cartItems.map(async (item) => {
+                      await axios.put(`${import.meta.env.VITE_BASE_URL}/products/${item.id}`, {...item,
+                        stock: item.stock - item.qty,  
+                      });
+                    })
+                  )
+
                  emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
                     status :res.data.orderStatus ,
                     email:res.data.email , 

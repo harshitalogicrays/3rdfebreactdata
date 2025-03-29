@@ -16,7 +16,8 @@ orders
  name qty price image
  total
 
- profile page 
- review and rating 
- track order 
- coupon code 
+
+
+
+
+ 

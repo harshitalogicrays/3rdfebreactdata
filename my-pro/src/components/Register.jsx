@@ -24,14 +24,15 @@ const Register = () => {
       toast.error("password not match")
     }
     else {
-      // alert(JSON.stringify(user))
         try{
-          // await fetch("http://localhost:1000/users" , {
-          //   method:"POST" , 
-          //   headers:{'content-type':'application/json'},
-          //   body : JSON.stringify({...user, createdAt:new Date() })
-          // })
-
+          const res =   await axios.get(`${import.meta.env.VITE_BASE_URL}/users?email=${email}`)
+          let users = res.data
+          if(users.length != 0){
+            toast.error(`${email} email already exists`);return
+          }
+        }
+        catch(err){toast.error(err.mesage)}
+        try{
           await axios.post(`${import.meta.env.VITE_BASE_URL}/users` , {...user, createdAt:new Date() })
           
           toast.success("registered successfully")
