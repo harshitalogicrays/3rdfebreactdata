@@ -7,16 +7,16 @@ const SalesChart = () => {
   useEffect(() => {
     const fetchOrders = async () => {
       try {
-        const response = await fetch("http://localhost:3000/orders");
+        const response = await fetch(`${import.meta.env.VITE_BASE_URL}/orders`);
         const orders = await response.json();
 
         // Process orders to calculate monthly sales
         const monthlySales = Array(12).fill(0);
 
         orders.forEach((order) => {
-          const date = new Date(order.date); // Assuming `order.date` is a valid date string
+          const date = new Date(order.orderDate); // Assuming `order.date` is a valid date string
           const month = date.getMonth(); // Get month (0-11)
-          monthlySales[month] += order.totalAmount; // Assuming `order.totalAmount` holds the sales value
+          monthlySales[month] += order.total; // Assuming `order.totalAmount` holds the sales value
         });
 
         setSalesData(monthlySales);

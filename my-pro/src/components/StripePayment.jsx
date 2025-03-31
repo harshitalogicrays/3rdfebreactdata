@@ -21,8 +21,11 @@ const StripePayment = ({clientSecret }) => {
   const total =  useSelector(selectTotal)
   const shippingAddress =  useSelector(selectAddress)
   const {username , email} = JSON.parse(sessionStorage.getItem("3rdfeb"))
+  let discountedPrice =  sessionStorage.getItem("discountedPrice");
+  let appliedCoupon = sessionStorage.getItem("appliedCoupon");
 
   const handlePayment = ()=>{
+    
       setIsLoading(true)
       if(!stripe || !elements) {toast.error("stripe not initailzied");return}
       const cardelement =  elements.getElement(CardElement)
@@ -44,7 +47,7 @@ const StripePayment = ({clientSecret }) => {
   const saveorder = async()=>{
     try{
       let res = await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
-          paymentMethod:'online' , paymentId:paymentId, orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
+          paymentMethod:'online' , paymentId:paymentId, orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date() , discountedPrice , appliedCoupon
       })
       if(res.status==200 || res.status==201){
         await Promise.all(
@@ -68,7 +71,8 @@ const StripePayment = ({clientSecret }) => {
            navigate('/thankyou')     
            dispatch(emptycart())            
          }).catch((err)=>{toast.error(err.message)})   
-     
+         sessionStorage.removeItem("discountedPrice");
+         sessionStorage.removeItem("appliedCoupon");
    }
  
 

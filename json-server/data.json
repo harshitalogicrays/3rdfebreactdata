@@ -77,7 +77,7 @@
       "brand": "qewrr",
       "category": "Electronics",
       "price": "20000",
-      "stock": 5,
+      "stock": 4,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
@@ -86,7 +86,8 @@
       ],
       "desc": "eqeq",
       "createdAt": "2025-03-22T07:02:58.393Z",
-      "editedAt": "2025-03-22T07:24:43.027Z"
+      "editedAt": "2025-03-22T07:24:43.027Z",
+      "qty": 1
     },
     {
       "id": "46db",
@@ -94,7 +95,7 @@
       "brand": "1314",
       "category": "Electronics",
       "price": "131",
-      "stock": 7,
+      "stock": 6,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
@@ -102,7 +103,7 @@
       ],
       "desc": "wrwr",
       "createdAt": "2025-03-22T07:03:12.217Z",
-      "qty": 2
+      "qty": 1
     },
     {
       "id": "bea9",
@@ -124,7 +125,7 @@
       "brand": "wew",
       "category": "Electronics",
       "price": "1212",
-      "stock": 11,
+      "stock": 10,
       "images": [
         "http://res.cloudinary.com/harshita1/image/upload/v1742798702/3rdfebproducts/tajnwapsapxrr7tp2s0r.png",
         "http://res.cloudinary.com/harshita1/image/upload/v1742798708/3rdfebproducts/a6hbkmhq7lwxceikfzen.png",
@@ -133,7 +134,8 @@
         "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/cemxgy4d1xyywapy0w7o.png"
       ],
       "desc": "wwewe",
-      "createdAt": "2025-03-24T06:45:11.616Z"
+      "createdAt": "2025-03-24T06:45:11.616Z",
+      "qty": 1
     }
   ],
   "orders": [
@@ -635,6 +637,109 @@
         "pincode": "13"
       },
       "createdAt": "2025-03-29T07:28:45.486Z"
+    },
+    {
+      "id": "4e2e",
+      "cartItems": [
+        {
+          "id": "46db",
+          "name": "4qeqe",
+          "brand": "1314",
+          "category": "Electronics",
+          "price": "131",
+          "stock": 7,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/opfxexbehjvsuwbky8zh.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/z5ziowratnczwwfjq1za.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626990/3rdfebproducts/xvydkxgkphd8dw4gsnpm.png"
+          ],
+          "desc": "wrwr",
+          "createdAt": "2025-03-22T07:03:12.217Z",
+          "qty": 1
+        },
+        {
+          "id": "490c",
+          "name": "wewe",
+          "brand": "wew",
+          "category": "Electronics",
+          "price": "1212",
+          "stock": 11,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798702/3rdfebproducts/tajnwapsapxrr7tp2s0r.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798708/3rdfebproducts/a6hbkmhq7lwxceikfzen.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/agnoazxh0cr440nvxbuy.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/iatetknfmze1koy5fmib.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742798709/3rdfebproducts/cemxgy4d1xyywapy0w7o.png"
+          ],
+          "desc": "wwewe",
+          "createdAt": "2025-03-24T06:45:11.616Z",
+          "qty": 1
+        }
+      ],
+      "total": 1343,
+      "username": "Ram Sharma",
+      "email": "ram@gmail.com",
+      "paymentMethod": "cod",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "12:51:11 PM",
+      "shippingAddress": {
+        "name": "qeqe",
+        "mobile": "13131",
+        "address1": "131",
+        "address2": "3131",
+        "city": "131",
+        "state": "131",
+        "country": "1313",
+        "pincode": "1313"
+      },
+      "createdAt": "2025-03-31T07:21:11.082Z",
+      "discountedPrice": "1208.7",
+      "appliedCoupon": "DISCOUNT10"
+    },
+    {
+      "id": "04df",
+      "cartItems": [
+        {
+          "id": "8204",
+          "name": "qweqwrrwr",
+          "brand": "qewrr",
+          "category": "Electronics",
+          "price": "20000",
+          "stock": 5,
+          "images": [
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/yps6frky6htlun0lrgcz.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742626976/3rdfebproducts/tp94kf3pnf0fqlk5og4l.png",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/axrljo0gaswvpmjvh5na.jpg",
+            "http://res.cloudinary.com/harshita1/image/upload/v1742628275/3rdfebproducts/yrfmmolo6ntc0424pzw3.jpg"
+          ],
+          "desc": "eqeq",
+          "createdAt": "2025-03-22T07:02:58.393Z",
+          "editedAt": "2025-03-22T07:24:43.027Z",
+          "qty": 1
+        }
+      ],
+      "total": 20000,
+      "username": "Ram Sharma",
+      "email": "ram@gmail.com",
+      "paymentMethod": "online",
+      "paymentId": "",
+      "orderStatus": "placed",
+      "orderDate": "3/31/2025",
+      "orderTime": "12:54:12 PM",
+      "shippingAddress": {
+        "name": "qeqe",
+        "mobile": "13131",
+        "address1": "131",
+        "address2": "3131",
+        "city": "131",
+        "state": "131",
+        "country": "1313",
+        "pincode": "1313"
+      },
+      "createdAt": "2025-03-31T07:24:12.734Z",
+      "discountedPrice": "17000",
+      "appliedCoupon": "OFFER15"
     }
   ],
   "categories": [
@@ -696,5 +801,30 @@
       "date": "2025-03-29T07:29:47.879Z"
     }
   ],
-  "coupons": []
+  "coupons": [
+    {
+      "code": "DISCOUNT10",
+      "type": "percentage",
+      "value": 10,
+      "minPrice": 500
+    },
+    {
+      "code": "FLAT200",
+      "type": "flat",
+      "value": 200,
+      "minPrice": 1000
+    },
+    {
+      "code": "SAVE300",
+      "type": "flat",
+      "value": 300,
+      "minPrice": 1500
+    },
+    {
+      "code": "OFFER15",
+      "type": "percentage",
+      "value": 15,
+      "minPrice": 2000
+    }
+  ]
 }

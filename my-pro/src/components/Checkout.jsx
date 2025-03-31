@@ -5,10 +5,12 @@ import { toast } from 'react-toastify';
 import { Navigate, useNavigate } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectAddress, store_address } from '../redux/checkoutSlice';
-import { selectCart } from '../redux/cartSlice';
+import { selectCart, selectTotal } from '../redux/cartSlice';
+import CouponCode from './CouponCode';
 
 const Checkout = () => {
   const navigate =  useNavigate()
+  const total = useSelector(selectTotal)
   const obj = {
     name: '',  mobile: '',   address1: '',  address2: '',city: '',  state: '',   country: '',  pincode: '' }
   const dispatch =  useDispatch()
@@ -105,6 +107,7 @@ const Checkout = () => {
               </Form>
             </Col>
             <Col md={6}>
+              <CouponCode total={total}/>
               <CheckoutSummary />
             </Col>
           </Row>

@@ -23,10 +23,13 @@ const CheckoutPayment = () => {
     const total =  useSelector(selectTotal)
     const shippingAddress =  useSelector(selectAddress)
     const {username , email} = JSON.parse(sessionStorage.getItem("3rdfeb"))
+    let discountedPrice =  sessionStorage.getItem("discountedPrice");
+    let appliedCoupon = sessionStorage.getItem("appliedCoupon");
     const handleCODorder = async()=>{
+
         try{
            const res =  await axios.post(`${import.meta.env.VITE_BASE_URL}/orders` , {cartItems , total, username,email , 
-                paymentMethod:'cod' , orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date()
+                paymentMethod:'cod' , orderStatus:"placed" , orderDate:new Date().toLocaleDateString() , orderTime:new Date().toLocaleTimeString() ,shippingAddress ,  createdAt:new Date() , discountedPrice ,appliedCoupon
             })
             // console.log(res)
             if(res.status==200 || res.status==201){
@@ -53,6 +56,8 @@ const CheckoutPayment = () => {
                   }).catch((err)=>{toast.error(err.message)})   
               
             }
+            sessionStorage.removeItem("discountedPrice");
+            sessionStorage.removeItem("appliedCoupon");
       
         }
         catch(err){toast.error(err.messge)}
@@ -67,7 +72,7 @@ const CheckoutPayment = () => {
             const res= await fetch(`${import.meta.env.VITE_NODE_URL}/create-payment-intent` ,{
                 method:"POST",
                 headers:{'content-type':'application/json'},
-                body :JSON.stringify({total}) } )
+                body :JSON.stringify({total:discountedPrice}) } )
             const data =  await res.json()
             console.log(data)
             setClientSecret(data.clientSecret)
