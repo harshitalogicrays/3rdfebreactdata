@@ -29,6 +29,7 @@ import ResetPassword from './ResetPassword'
 import Profile from './Profile'
 import { Protected, ProtectedAdmin } from './hiddenlinks'
 import ManageReviews from './Admin/ManageReviews'
+import TrackOrder from './TrackOrder'
 
 const Routing = () => {
   return (
@@ -47,6 +48,8 @@ const Routing = () => {
           <Route path='thankyou' element={<Thankyou/>} />
           <Route path='myorders' element={<Protected><MyOrders/></Protected>} />
           <Route path='myorders/details/:id' element={<Protected><MyOrderDetails/></Protected>} />
+          <Route path='myorders/track/:id' element={<Protected><TrackOrder/></Protected>} />
+
           <Route path='profile' element={<Protected><Profile/></Protected>} />
 
         </Route>

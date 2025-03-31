@@ -10,7 +10,7 @@ const ChangeOrderStatus = ({ order }) => {
     const [status, setStatus] = useState(order.orderStatus)
     const handleUpdate = async()=>{
         try{
-            let res  = await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}` , {...order ,  orderStatus:status , editedAt:new Date()})
+            let res  = await axios.put(`${import.meta.env.VITE_BASE_URL}/orders/${order.id}` , {...order ,  orderStatus:status , tracking: [...order.tracking ,{ date: new Date().toISOString().split("T")[0], status: status } ] , editedAt:new Date()})
            
             emailjs.send("service_i18a4kv", 'template_3hg0hvp', {
                 status :res.data.orderStatus ,

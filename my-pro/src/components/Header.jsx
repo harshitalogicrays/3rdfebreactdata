@@ -84,14 +84,18 @@ const Header = () => {
             </Form>
 
             <Nav className='ms-auto'>
-              <Nav.Link as={NavLink} to="/cart" >
-                <div style={{ position: 'relative', marginRight: '20px' }}>
-                  <BsCart3 style={{ fontSize: '30px' }} />
-                  <span class="badge rounded-pill text-bg-danger"
-                    style={{ position: 'absolute', top: '-10px', right: "-15px" }}> {cartItems.length} </span >
-                </div>
+            <Nav.Link as={NavLink} to="/cart" className="d-flex align-items-center">
+  <div className="position-relative d-flex align-items-center">
+    <BsCart3 style={{ fontSize: '30px' }} />
+    <span
+      className="badge rounded-pill text-bg-danger position-absolute"
+      style={{ top: "-12px", right: "-10px" }} 
+    >
+      {cartItems.length}
+    </span>
+  </div>
+</Nav.Link>
 
-              </Nav.Link>
               <ShowOnLogout>
                 <Nav.Link as={NavLink} to="/register" style={navstyles}>Register</Nav.Link>
                 <Nav.Link as={NavLink} to="/login" style={navstyles}>Login</Nav.Link>

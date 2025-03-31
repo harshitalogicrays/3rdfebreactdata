@@ -43,6 +43,8 @@ const MyOrders = () => {
                <td> {order.orderStatus != 'delivered' ? <span className='text-danger'>{order.orderStatus}</span> :  <span className='text-success'>{order.orderStatus}</span>} </td>
                  <td>
                    <button type="button"  class="btn btn-primary" onClick={()=>navigate(`/myorders/details/${order.id}`)}> View </button>
+            
+                 <button type="button"  class="btn btn-primary" onClick={()=>navigate(`/myorders/track/${order.id}`)}> Track </button>
                  </td>
                </tr>)}
              </tbody>
